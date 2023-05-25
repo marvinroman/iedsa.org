@@ -6,4 +6,12 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+
+  publicRuntimeConfig: {
+    organization: {
+      long_name: 'Inland Empire Democratic Socialists of America',
+      medium_name: 'Inland Empire Democratic Socialists',
+      short_name: 'Inland Empire DSA',
+    },
+  },
 })

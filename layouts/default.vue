@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <v-app id="inspire">
     <TheHeader />
-    <slot />
+    <v-main>
+      <slot />
+    </v-main>
     <TheFooter />
-  </div>
+  </v-app>
 </template>
