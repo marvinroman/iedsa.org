@@ -55,14 +55,17 @@
       ></v-app-bar-nav-icon>
       <v-img
         src="https://iedsa.org/assets/static/iedsa_logo.92f7e5b.3ea25939b069041688a829788e1be569.svg"
-        inline
         height="48"
+        width="48"
         class="ml-2"
+        inline
       ></v-img>
 
-      <v-toolbar-title>
-        {{ title }}
-      </v-toolbar-title>
+      <v-btn text href="/" class="ml-2 gradient-border" size="large">
+        <v-toolbar-title>
+          {{ title }}
+        </v-toolbar-title>
+      </v-btn>
 
       <v-spacer />
       <v-toolbar-items class="d-none d-md-flex">

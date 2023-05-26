@@ -13,16 +13,22 @@ import { useDisplay } from 'vuetify'
 
 export default {
   setup() {
-    const { lgAndUp, mdAndUp } = useDisplay()
     const config = useAppConfig()
-    return { lgAndUp, mdAndUp, config }
+    const { lgAndUp, mdAndUp } = useDisplay()
+    return { config, lgAndUp, mdAndUp }
   },
   data: () => ({
     title: null,
-    sizes: {},
   }),
+  watch: {
+    lgAndUp() {
+      this.resize()
+    },
+    mdAndUp() {
+      this.resize()
+    },
+  },
   mounted() {
-    // eslint-disable-next-line no-console
     this.resize()
   },
   methods: {

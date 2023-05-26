@@ -24,7 +24,7 @@ html {
         text-indent: 1rem;
     }
 
-    .headline, 
+    .headline,
     .title {
         font-family: "ManifoldDSA", "sans-serif" !important;
     }
@@ -36,13 +36,13 @@ html {
     font-size: 1.25rem;
     font-weight: 500;
 
-    @include for-sm-phone-only { 
-        font-size: .7rem;
+    @include for-sm-phone-only {
+        font-size: 0.7rem;
     }
-    @include for-phone-only { 
+    @include for-phone-only {
         font-size: 1.1rem;
     }
-    @include for-tablet-portrait-up {  
+    @include for-tablet-portrait-up {
         font-size: 1.25rem;
     }
 }
@@ -55,10 +55,10 @@ html {
 
     .v-card__text {
         height: 136px;
-    
-        .content {  
-            text-overflow:ellipsis;
-            overflow:hidden;
+
+        .content {
+            text-overflow: ellipsis;
+            overflow: hidden;
             // Addition lines for 2 line or multiline ellipsis
             display: -webkit-box !important;
             -webkit-line-clamp: 2;
@@ -68,62 +68,60 @@ html {
         .mb-1.tags {
             height: 36px;
             overflow: hidden;
-          }
+        }
     }
 }
 
-
 .v-col.column-2 {
-
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
     flex: 0 0 100%;
-    @include for-phone-only {  
+    @include for-phone-only {
         max-width: 100%;
         flex: 0 0 100%;
     }
-    @include for-tablet-portrait-up {  
+    @include for-tablet-portrait-up {
         max-width: 100%;
         flex: 0 0 100%;
     }
-    @include for-tablet-landscape-up {  
+    @include for-tablet-landscape-up {
         flex: 0 0 50%;
         max-width: 50%;
     }
-    @include for-desktop-up { 
+    @include for-desktop-up {
         flex: 0 0 50%;
         max-width: 50%;
     }
-    @include for-big-desktop-up { 
+    @include for-big-desktop-up {
         flex: 0 0 50%;
         max-width: 50%;
     }
 }
 
-.col.articles, 
+.col.articles,
 .col.branches {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
     flex: 0 0 100%;
-    @include for-phone-only {  
+    @include for-phone-only {
         max-width: 100%;
         flex: 0 0 100%;
     }
-    @include for-tablet-portrait-up {  
+    @include for-tablet-portrait-up {
         flex: 0 0 50%;
         max-width: 50%;
     }
-    @include for-tablet-landscape-up {  
+    @include for-tablet-landscape-up {
         flex: 0 0 50%;
         max-width: 50%;
     }
-    @include for-desktop-up { 
+    @include for-desktop-up {
         flex: 0 0 33.3333333333%;
         max-width: 33.3333333333%;
     }
-    @include for-big-desktop-up { 
+    @include for-big-desktop-up {
         flex: 0 0 25%;
         max-width: 25%;
     }
@@ -145,5 +143,43 @@ html {
     pre.shiki {
         margin-top: 1rem;
         margin-bottom: 1rem;
+    }
+}
+
+.gradient-border {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    position: relative;
+
+    &.v-btn--icon {
+        border-radius: 50%;
+    
+        &::before {
+            border-radius: 50%;
+        }
+    }
+
+    &:hover::before {
+        background-position: -50% 0;
+        opacity: 1;
+    }
+
+    &::before {
+        background: linear-gradient(45deg, #fff, #fff 25%, #fffdb9 50%, #f8d692 75%, #ff8e8e);
+        background-size: 400% auto;
+        bottom: 0;
+        content: "";
+        left: 0;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.5;
+        padding: 2px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: background-position 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        width: 100%;
     }
 }

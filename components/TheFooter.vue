@@ -5,7 +5,7 @@
         v-for="(social, index) in socials"
         :key="index"
         :href="social.link"
-        class="mx-4"
+        class="mx-4 gradient-border"
         target="_blank"
         rel="noopener noreferrer"
         flat
