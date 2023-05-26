@@ -4,6 +4,7 @@
       <v-btn
         v-for="(social, index) in socials"
         :key="index"
+        v-ripple="{ class: 'text-primary' }"
         :href="social.link"
         class="mx-4 gradient-border"
         target="_blank"

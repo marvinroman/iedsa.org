@@ -61,7 +61,13 @@
         inline
       ></v-img>
 
-      <v-btn text href="/" class="ml-2 gradient-border" size="large">
+      <v-btn
+        v-ripple="{ class: 'text-primary' }"
+        text
+        href="/"
+        class="ml-2 gradient-border"
+        size="large"
+      >
         <v-toolbar-title>
           {{ title }}
         </v-toolbar-title>
