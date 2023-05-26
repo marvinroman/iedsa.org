@@ -10,12 +10,8 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/content'],
 
-  publicRuntimeConfig: {
-    organization: {
-      long_name: 'Inland Empire Democratic Socialists of America',
-      medium_name: 'Inland Empire Democratic Socialists',
-      short_name: 'Inland Empire DSA',
-    },
+  runtimeConfig: {
+    public: {},
   },
 
   typescript: {

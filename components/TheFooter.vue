@@ -1,5 +1,5 @@
 <template>
-  <v-footer app elevation="2" class="d-flex flex-column">
+  <v-footer app elevation="2" class="d-block">
     <div class="d-block w-100 text-center">
       <v-btn
         v-for="(social, index) in socials"
@@ -18,14 +18,19 @@
     <v-divider></v-divider>
     <div class="d-block w-100 text-center py-1">
       <v-icon>mdi-copy-left</v-icon>&nbsp;{{ new Date().getFullYear() }} —
-      <strong>{{ $config.organization.long_name }}</strong>
+      <strong>{{ title }}</strong>
     </div>
   </v-footer>
 </template>
 
 <script>
 export default {
-  components: {},
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+  },
   data: () => ({
     socials: [
       {

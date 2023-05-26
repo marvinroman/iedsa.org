@@ -10,7 +10,7 @@
       @click="rail = false"
     >
       <v-list>
-        <v-list-item :title="$config.organization.short_name" nav>
+        <v-list-item :title="title" nav>
           <template #append>
             <v-btn
               variant="text"
@@ -53,17 +53,15 @@
         class="d-flex d-md-none"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
+      <v-img
+        src="https://iedsa.org/assets/static/iedsa_logo.92f7e5b.3ea25939b069041688a829788e1be569.svg"
+        inline
+        height="48"
+        class="ml-2"
+      ></v-img>
 
-      <v-toolbar-title class="d-none d-lg-flex">
-        {{ $config.organization.long_name }}
-      </v-toolbar-title>
-
-      <v-toolbar-title class="d-none d-sm-flex d-lg-none">
-        {{ $config.organization.medium_name }}
-      </v-toolbar-title>
-
-      <v-toolbar-title class="d-flex d-sm-none">
-        {{ $config.organization.short_name }}
+      <v-toolbar-title>
+        {{ title }}
       </v-toolbar-title>
 
       <v-spacer />
@@ -99,6 +97,12 @@
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+  },
   data: () => ({
     drawer: false,
     rail: false,
@@ -133,6 +137,11 @@ export default {
         name: 'Calendar',
         icon: 'mdi-calendar-month-outline',
         path: 'https://calendar.iedsa.org',
+      },
+      {
+        name: 'Join',
+        icon: 'mdi-handshake-outline',
+        path: 'https://act.dsausa.org/donate/membership',
       },
     ],
   }),
