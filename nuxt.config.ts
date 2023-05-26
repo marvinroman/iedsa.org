@@ -3,9 +3,12 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  typescript: {
-    shim: false,
+
+  content: {
+    // https://content.nuxtjs.org/api/configuration
   },
+
+  modules: ['@nuxt/content'],
 
   publicRuntimeConfig: {
     organization: {
@@ -13,5 +16,9 @@ export default defineNuxtConfig({
       medium_name: 'Inland Empire Democratic Socialists',
       short_name: 'Inland Empire DSA',
     },
+  },
+
+  typescript: {
+    shim: false,
   },
 })

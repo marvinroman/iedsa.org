@@ -46,11 +46,14 @@
     "sass": "^1.55.0",
     "standard-version": "^9.5.0",
     "stylelint": "^15.6.2",
-    "stylelint-config-recommended-vue": "^1.4.0",
-    "stylelint-config-standard": "^33.0.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended-scss": "^8.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^33.0.0",
     "typescript": "^4.8.4",
     "vuetify": "^3.1.0"
+  },
+  "dependencies": {
+    "@nuxt/content": "^2.6.0"
   }
 }
