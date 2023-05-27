@@ -44,6 +44,7 @@
         </v-card-text>
       </v-card>
     </v-container>
+    <ContactForm url="https://formspree.io/f/xknvjjye" />
   </v-container>
 </template>
 

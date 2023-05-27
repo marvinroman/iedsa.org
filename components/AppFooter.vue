@@ -31,21 +31,10 @@ export default {
       type: String,
       default: '',
     },
+    socials: {
+      type: Array,
+      default: null,
+    },
   },
-  data: () => ({
-    socials: [
-      {
-        link: 'https://www.facebook.com/InlandEmpireDSA',
-        icon: 'mdi-facebook',
-      },
-      { link: 'https://twitter.com/InlandEmpireDSA', icon: 'mdi-twitter' },
-      {
-        link: 'https://www.instagram.com/InlandEmpireDSA',
-        icon: 'mdi-instagram',
-      },
-      { link: 'https://twitch.tv/inlandempiredsa', icon: 'mdi-twitch' },
-      { link: 'mailto:inlanddsa@gmail.com', icon: 'mdi-email-outline' },
-    ],
-  }),
 }
 </script>

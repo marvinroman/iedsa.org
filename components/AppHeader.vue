@@ -20,7 +20,7 @@
           </template>
         </v-list-item>
         <v-divider />
-        <template v-for="nav in nav_items" :key="nav.name">
+        <template v-for="nav in menu" :key="nav.name">
           <v-list-item
             v-if="nav.path"
             :href="nav.path"
@@ -75,7 +75,7 @@
 
       <v-spacer />
       <v-toolbar-items class="d-none d-md-flex">
-        <template v-for="nav in nav_items" :key="nav.name">
+        <template v-for="nav in menu" :key="nav.name">
           <v-btn v-if="nav.path" :href="nav.path">
             {{ nav.name }}
           </v-btn>
@@ -111,48 +111,14 @@ export default {
       type: String,
       default: '',
     },
+    menu: {
+      type: Array,
+      default: null,
+    },
   },
   data: () => ({
     drawer: false,
     rail: false,
-    nav_items: [
-      {
-        name: 'Home',
-        icon: 'mdi-home',
-        path: '/',
-      },
-      {
-        name: 'Branches',
-        icon: 'mdi-map-marker-radius-outline',
-        path: '/branches',
-      },
-      {
-        name: 'News',
-        icon: 'mdi-newspaper-variant-multiple-outline',
-        items: [
-          {
-            name: 'Articles',
-            icon: 'mdi-newspaper-variant-outline',
-            path: '/articles',
-          },
-          {
-            name: 'Statements',
-            icon: 'mdi-bullhorn-variant-outline',
-            path: '/statements',
-          },
-        ],
-      },
-      {
-        name: 'Calendar',
-        icon: 'mdi-calendar-month-outline',
-        path: 'https://calendar.iedsa.org',
-      },
-      {
-        name: 'Join',
-        icon: 'mdi-handshake-outline',
-        path: 'https://act.dsausa.org/donate/membership',
-      },
-    ],
   }),
   computed: {
     rail_icon() {

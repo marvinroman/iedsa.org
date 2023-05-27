@@ -1,10 +1,10 @@
 <template>
   <v-app id="inspire" v-resize="resize">
-    <TheHeader :title="title" />
+    <AppHeader :title="title" :menu="config.menu" />
     <v-main app>
       <slot />
     </v-main>
-    <TheFooter :title="title" />
+    <AppFooter :title="title" :socials="config.socials" />
   </v-app>
 </template>
 
