@@ -76,10 +76,7 @@
       <v-spacer />
       <v-toolbar-items class="d-none d-md-flex">
         <template v-for="nav in menu" :key="nav.name">
-          <v-btn v-if="nav.path" :href="nav.path">
-            {{ nav.name }}
-          </v-btn>
-          <v-menu v-else open-on-hover>
+          <v-menu v-if="nav.items" open-on-hover>
             <template #activator="{ props }">
               <v-btn v-bind="props" append-icon="mdi-chevron-down">
                 {{ nav.name }}
@@ -90,7 +87,7 @@
                 v-for="item in nav.items"
                 :key="item.name"
                 :prepend-icon="item.icon"
-                :href="item.path"
+                :to="item.path"
               >
                 <v-list-item-title>
                   {{ item.name }}
@@ -98,6 +95,17 @@
               </v-list-item>
             </v-list>
           </v-menu>
+          <v-btn v-else-if="nav.path" :to="nav.path">
+            {{ nav.name }}
+          </v-btn>
+          <v-btn
+            v-else-if="nav.href"
+            :href="nav.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ nav.name }}
+          </v-btn>
         </template>
       </v-toolbar-items>
     </v-app-bar>

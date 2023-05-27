@@ -45,12 +45,12 @@ export default defineAppConfig({
     {
       name: 'Calendar',
       icon: 'mdi-calendar-month-outline',
-      path: 'https://calendar.iedsa.org',
+      href: 'https://calendar.iedsa.org',
     },
     {
       name: 'Join',
       icon: 'mdi-handshake-outline',
-      path: 'https://act.dsausa.org/donate/membership',
+      href: 'https://act.dsausa.org/donate/membership',
     },
   ],
 })
