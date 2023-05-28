@@ -10,6 +10,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   plugins: [],
+  ignorePatterns: ['/.output/**', '/dist/**'],
   rules: {
     'vue/no-v-for-template-key': 'off',
     'vue/no-v-for-template-key-on-child': 'error',
