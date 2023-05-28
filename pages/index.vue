@@ -50,4 +50,9 @@
 
 <script setup>
 const workingGroups = await queryContent('workinggroups').find()
+const config = useAppConfig()
+
+useHead({
+  title: `Home - ${config.short_title}`,
+})
 </script>

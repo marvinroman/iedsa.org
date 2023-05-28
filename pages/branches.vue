@@ -65,4 +65,9 @@
 
 <script setup>
 const branches = await queryContent('branches').find()
+const config = useAppConfig()
+
+useHead({
+  title: `Branches - ${config.short_title}`,
+})
 </script>
