@@ -1,5 +1,5 @@
 ---
-preview_image: https://placekitten.com/640/360
+image: https://placekitten.com/640/360
 priority: 100
 author: Author Name 2
 title: Blog Post 2

@@ -1,5 +1,5 @@
 ---
-preview_image: https://placebeard.it/640x360
+image: https://placebeard.it/640x360
 author: Author Name
 title: New Blog Post 17
 published: true

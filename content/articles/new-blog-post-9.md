@@ -1,5 +1,5 @@
 ---
-preview_image: https://placekitten.com/640/360
+image: https://placekitten.com/640/360
 author: Author Name
 title: New Blog Post 9
 published: true

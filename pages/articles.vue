@@ -4,7 +4,7 @@
       <v-row>
         <v-col v-for="article in articles" :key="article.id" class="articles">
           <v-hover v-slot="{ hover }">
-            <v-card class="elevation-6 fill-height" :href="article.path" tile>
+            <v-card class="elevation-6 fill-height" :href="article._path" tile>
               <v-img height="200px" :src="article.preview_image" cover>
                 <v-expand-transition>
                   <div
@@ -41,7 +41,7 @@
                       v-for="tag in article.tags"
                       :key="tag.id"
                       outlined
-                      :href="tag.path"
+                      :href="tag._path"
                       class="mr-2"
                     >
                       {{ tag.title }}
@@ -57,7 +57,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn :href="article.path" text color="info">Read More</v-btn>
+                <v-btn :href="article._path" text color="info">Read More</v-btn>
               </v-card-actions>
             </v-card>
           </v-hover>
@@ -83,7 +83,7 @@ export default {
   data() {
     return {
       icons: {
-        author: 'mdi-raw-en',
+        author: 'mdi-raw-pen',
         star: 'mdi-star',
         tag: 'mdi-tag',
       },
@@ -99,8 +99,8 @@ export default {
 </script>
 
 <style lang="scss">
+/* stylelint-disable-next-line selector-class-pattern */
 .v-badge__badge {
-  /* stylelint-disable-line selector-class-pattern */
   font-size: 10px;
 }
 </style>

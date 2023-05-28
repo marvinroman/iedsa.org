@@ -1,5 +1,5 @@
 ---
-preview_image: https://picsum.photos/640/360
+image: https://picsum.photos/640/360
 author: Author Name
 title: New Blog Post 15
 published: true

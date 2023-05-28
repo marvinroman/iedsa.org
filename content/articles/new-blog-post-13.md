@@ -1,5 +1,5 @@
 ---
-preview_image: http://placeimg.com/640/360/any
+image: http://placeimg.com/640/360/any
 author: Author Name
 title: New Blog Post 13
 published: true

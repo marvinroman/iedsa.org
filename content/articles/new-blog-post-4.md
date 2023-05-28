@@ -1,5 +1,5 @@
 ---
-preview_image: https://loremflickr.com/640/360
+image: https://loremflickr.com/640/360
 author: Author Name
 title: New Blog Post 4
 published: true
