@@ -4,7 +4,7 @@ priority: 100
 author: Author Name 2
 title: Blog Post 2
 published: true
-date: 2019-09-15T05:00:00Z
+date: 2019-09-15
 excerpt: This is a summary of the blog post that will display in the article list. This is a summary of the blog post that will display in the article list. This is a summary of the blog post that will display in the article list.
 tags: ['design', 'frontend']
 ---

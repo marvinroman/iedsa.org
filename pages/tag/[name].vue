@@ -9,7 +9,7 @@
       </v-chip>
     </v-sheet>
     <v-sheet>
-      <h2>
+      <h2 class="mb-4">
         Articles tagged with:&nbsp;
         <span class="text-capitalize">{{ name }}</span>
       </h2>
@@ -18,6 +18,20 @@
           v-for="article in articles"
           :key="article.id"
           :article="article"
+        />
+      </v-row>
+    </v-sheet>
+    <v-divider class="my-6"></v-divider>
+    <v-sheet>
+      <h2 class="mb-4">
+        Statements tagged with:&nbsp;
+        <span class="text-capitalize">{{ name }}</span>
+      </h2>
+      <v-row>
+        <StatementList
+          v-for="statement in statements"
+          :key="statement.id"
+          :statement="statement"
         />
       </v-row>
     </v-sheet>
@@ -40,6 +54,11 @@ const allTags = [...uniqueTags].sort().pop()
 console.debug({ allTags })
 
 const articles = await queryContent('article')
+  .where({ tags: { $contains: name } })
+  .sort({ date: 1 })
+  .find()
+
+const statements = await queryContent('statement')
   .where({ tags: { $contains: name } })
   .sort({ date: 1 })
   .find()

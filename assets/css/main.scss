@@ -47,13 +47,14 @@ html {
     }
 }
 
-.articles {
-    .v-card__title {
+.articles,
+.statements {
+    .v-card-title {
         font-size: 1.25rem;
         font-weight: 500;
     }
 
-    .v-card__text {
+    .v-card-text {
         height: 136px;
 
         .content {
@@ -79,7 +80,8 @@ html {
     flex: 0 0 100%;
 
     &.articles,
-    &.branches {
+    &.branches,
+    &.statements {
         @include for-phone-only {
             max-width: 100%;
             flex: 0 0 100%;
