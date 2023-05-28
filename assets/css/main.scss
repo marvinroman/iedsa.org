@@ -72,58 +72,57 @@ html {
     }
 }
 
-.v-col.column-2 {
+.v-col {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
     flex: 0 0 100%;
-    @include for-phone-only {
-        max-width: 100%;
-        flex: 0 0 100%;
-    }
-    @include for-tablet-portrait-up {
-        max-width: 100%;
-        flex: 0 0 100%;
-    }
-    @include for-tablet-landscape-up {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    @include for-desktop-up {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    @include for-big-desktop-up {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
 
-.col.articles,
-.col.branches {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-    flex: 0 0 100%;
-    @include for-phone-only {
-        max-width: 100%;
-        flex: 0 0 100%;
+    &.articles,
+    &.branches {
+        @include for-phone-only {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        @include for-tablet-portrait-up {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @include for-tablet-landscape-up {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @include for-desktop-up {
+            flex: 0 0 33.3333333333%;
+            max-width: 33.3333333333%;
+        }
+        @include for-big-desktop-up {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
     }
-    @include for-tablet-portrait-up {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    @include for-tablet-landscape-up {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    @include for-desktop-up {
-        flex: 0 0 33.3333333333%;
-        max-width: 33.3333333333%;
-    }
-    @include for-big-desktop-up {
-        flex: 0 0 25%;
-        max-width: 25%;
+
+    &.column-2 {
+        @include for-phone-only {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        @include for-tablet-portrait-up {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        @include for-tablet-landscape-up {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @include for-desktop-up {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @include for-big-desktop-up {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
     }
 }
 
