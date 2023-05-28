@@ -36,11 +36,13 @@ const mappedAuthors = authorsQuery
 const uniqueAuthors = new Set(mappedAuthors)
 const allAuthors = [...uniqueAuthors].sort()
 
-// eslint-disable-next-line no-console
-console.debug({ uniqueAuthors })
-
 const articles = await queryContent('article')
   .where({ author: name })
   .sort({ date: 1 })
   .find()
+
+const config = useAppConfig()
+useHead({
+  title: `Author - ${name} - ${config.short_title}`,
+})
 </script>

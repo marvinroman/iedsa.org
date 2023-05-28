@@ -41,20 +41,23 @@
 
       <v-card-subtitle class="mt-2">
         By:
-        <NuxtLink :to="'/author/' + article.author">
+        <NuxtLink
+          :to="'/author/' + article.author"
+          class="text-decoration-none"
+        >
           {{ article.author }}
         </NuxtLink>
       </v-card-subtitle>
 
       <v-card-text>
-        <div>
+        <div class="tags-container my-4">
           <v-chip
             v-for="tag in article.tags"
             :key="tag.id"
             outlined
             class="mr-2"
           >
-            <NuxtLink :to="'/tag/' + tag">
+            <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
               <v-icon class="ml-2" color="accent" small> mdi-tag </v-icon>
               {{ tag }}
             </NuxtLink>
@@ -90,7 +93,4 @@ const [prev, next] = await queryContent('article')
   .only(['_path', 'title'])
   .sort({ date: 1 })
   .findSurround(path)
-
-// eslint-disable-next-line no-console
-console.debug({ prev, next })
 </script>

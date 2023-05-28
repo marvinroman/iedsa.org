@@ -50,9 +50,6 @@ const mappedTags = tagsQuery
 const uniqueTags = new Set(mappedTags)
 const allTags = [...uniqueTags].sort().pop()
 
-// eslint-disable-next-line no-console
-console.debug({ allTags })
-
 const articles = await queryContent('article')
   .where({ tags: { $contains: name } })
   .sort({ date: 1 })
@@ -62,4 +59,9 @@ const statements = await queryContent('statement')
   .where({ tags: { $contains: name } })
   .sort({ date: 1 })
   .find()
+
+const config = useAppConfig()
+useHead({
+  title: `Tag - ${name} - ${config.short_title}`,
+})
 </script>
