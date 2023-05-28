@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-container class="mt-16" fill-height>
+    <v-container>
       <v-row>
         <v-col class="column-2">
           <h1>Branches &amp; Regions</h1>
