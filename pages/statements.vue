@@ -2,6 +2,11 @@
   <v-container>
     <v-row>
       <StatementList
+        v-for="statement in priorityStatements"
+        :key="statement.id"
+        :statement="statement"
+      />
+      <StatementList
         v-for="statement in statements"
         :key="statement.id"
         :statement="statement"
@@ -15,14 +20,21 @@ export default {
   async setup() {
     const config = useAppConfig()
 
+    const priorityStatements = await queryContent('statement')
+      .where({ priority: { $gt: 0 } })
+      .sort({ priority: 1, $numeric: true })
+      .sort({ date: -1 })
+      .find()
+
     const statements = await queryContent('statement')
-      .sort({ priority: 1, date: 1 })
+      .where({ priority: { $not: { $gt: 0 } } })
+      .sort({ date: -1 })
       .find()
 
     useHead({
       title: `Statements - ${config.short_title}`,
     })
-    return { statements }
+    return { priorityStatements, statements }
   },
 }
 </script>

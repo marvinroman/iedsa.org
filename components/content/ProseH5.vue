@@ -1,0 +1,21 @@
+<template>
+  <h5 :id="id">
+    <a
+      v-if="id && generate"
+      :href="`#${id}`"
+      class="text-decoration-none text-black"
+    >
+      <slot />
+    </a>
+    <slot v-else />
+  </h5>
+</template>
+
+<script setup lang="ts">
+import { useRuntimeConfig } from '#imports'
+defineProps<{ id?: string }>()
+const heading = 5
+const { anchorLinks } = useRuntimeConfig().public.content
+const generate =
+  anchorLinks?.depth >= heading && !anchorLinks?.exclude.includes(heading)
+</script>

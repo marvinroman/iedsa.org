@@ -14,5 +14,6 @@ module.exports = {
   rules: {
     'vue/no-v-for-template-key': 'off',
     'vue/no-v-for-template-key-on-child': 'error',
+    'vue/multi-word-component-names': 'off',
   },
 }

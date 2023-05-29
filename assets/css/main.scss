@@ -74,14 +74,15 @@ html {
 }
 
 .v-col {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-    flex: 0 0 100%;
 
     &.articles,
     &.branches,
     &.statements {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        flex: 0 0 100%;
+
         @include for-phone-only {
             max-width: 100%;
             flex: 0 0 100%;
@@ -189,4 +190,16 @@ html {
 .prev-btn {
     font-size: 1.5rem;
     background: rgba(255,255,255,0.25);
+}
+
+.table-of-contents {
+    ul {
+        list-style: none;
+    }
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
 }
