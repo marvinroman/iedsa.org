@@ -15,31 +15,26 @@
   </v-container>
 </template>
 
-<script>
-export default {
-  async setup() {
-    const config = useAppConfig()
+<script setup>
+const config = useAppConfig()
 
-    const priorityArticles = await queryContent('article')
-      .where({ priority: { $gt: 0 } })
-      .sort({ priority: -1, $numeric: true })
-      .sort({ date: -1 })
-      .find()
+const priorityArticles = await queryContent('article')
+  .where({ priority: { $gt: 0 } })
+  .sort({ priority: -1, $numeric: true })
+  .sort({ date: -1 })
+  .find()
 
-    const articles = await queryContent('article')
-      .where({ priority: { $not: { $gt: 0 } } })
-      .sort({ date: -1 })
-      .find()
+const articles = await queryContent('article')
+  .where({ priority: { $not: { $gt: 0 } } })
+  .sort({ date: -1 })
+  .find()
 
-    useHead({
-      title: `Articles - ${config.short_title}`,
-    })
-    return { priorityArticles, articles }
-  },
-}
+useHead({
+  title: `Articles - ${config.short_title}`,
+})
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 /* stylelint-disable-next-line selector-class-pattern */
 .v-badge__badge {
   font-size: 10px;

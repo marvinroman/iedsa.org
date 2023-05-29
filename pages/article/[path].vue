@@ -32,48 +32,75 @@
         <div v-else></div>
       </div>
     </v-container>
-    <v-card class="ma-0 pa-0" flat>
-      <v-card-title class="mt-4">
-        <h1>
-          {{ article.title }}
-        </h1>
-      </v-card-title>
+    <v-sheet>
+      <v-card class="ma-0 pa-0" flat>
+        <v-card-title class="mt-4">
+          <h1>
+            {{ article.title }}
+          </h1>
+        </v-card-title>
 
-      <v-card-subtitle class="mt-2">
-        By:
-        <NuxtLink
-          :to="'/author/' + article.author"
-          class="text-decoration-none"
-        >
-          {{ article.author }}
-        </NuxtLink>
-      </v-card-subtitle>
-
-      <v-card-text>
-        <div class="tags-container my-4">
-          <v-chip
-            v-for="tag in article.tags"
-            :key="tag.id"
-            outlined
-            class="mr-2"
+        <v-card-subtitle class="mt-2">
+          By:
+          <NuxtLink
+            :to="'/author/' + article.author"
+            class="text-decoration-none"
           >
-            <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
-              <v-icon class="ml-2" color="accent" small> mdi-tag </v-icon>
-              {{ tag }}
-            </NuxtLink>
-          </v-chip>
-        </div>
+            {{ article.author }}
+          </NuxtLink>
+        </v-card-subtitle>
 
-        <div class="px-xs-5 my-1">
-          Date: {{ date.format(article.date, 'fullDateWithWeekday') }}
-        </div>
-      </v-card-text>
-    </v-card>
+        <v-card-text>
+          <div class="tags-container my-4">
+            <v-chip
+              v-for="tag in article.tags"
+              :key="tag.id"
+              outlined
+              class="mr-2"
+            >
+              <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
+                <v-icon class="ml-2" color="accent" small> mdi-tag </v-icon>
+                {{ tag }}
+              </NuxtLink>
+            </v-chip>
+          </div>
+
+          <div class="px-xs-5 my-1">
+            Date: {{ date.format(article.date, 'fullDateWithWeekday') }}
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-sheet>
     <v-divider></v-divider>
 
-    <v-card flat>
-      <ContentRenderer :value="article" />
-    </v-card>
+    <v-container class="pa-0">
+      <v-row>
+        <v-col>
+          <ContentRenderer
+            :value="article"
+            class="bg-grey-lighten-3 py-8 px-4"
+          />
+        </v-col>
+        <v-divider v-if="showTableOfContents" vertical></v-divider>
+        <v-col v-if="showTableOfContents" cols="3" class="table-of-contents">
+          <h2>Contents</h2>
+          <ul>
+            <li v-for="link in article.body.toc.links" :key="link.text">
+              <a :href="`#${link.id}`">
+                {{ link.text }}
+              </a>
+              <ul v-if="link.children">
+                <li v-for="sublink in link.children" :key="sublink.text">
+                  <a :href="`#${sublink.id}`" class="pl-3">
+                    {{ sublink.text }}
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-container>
 </template>
 
@@ -91,6 +118,9 @@ useContentHead(article)
 
 const [prev, next] = await queryContent('article')
   .only(['_path', 'title'])
-  .sort({ date: 1 })
+  .sort({ date: -1 })
   .findSurround(path)
+
+const showTableOfContents =
+  article.body.toc && article.body.toc.links.length > 0
 </script>
