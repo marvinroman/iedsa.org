@@ -15,28 +15,23 @@
   </v-container>
 </template>
 
-<script>
-export default {
-  async setup() {
-    const config = useAppConfig()
+<script setup>
+const config = useAppConfig()
 
-    const priorityStatements = await queryContent('statement')
-      .where({ priority: { $gt: 0 } })
-      .sort({ priority: 1, $numeric: true })
-      .sort({ date: -1 })
-      .find()
+const priorityStatements = await queryContent('statement')
+  .where({ priority: { $gt: 0 } })
+  .sort({ priority: 1, $numeric: true })
+  .sort({ date: -1 })
+  .find()
 
-    const statements = await queryContent('statement')
-      .where({ priority: { $not: { $gt: 0 } } })
-      .sort({ date: -1 })
-      .find()
+const statements = await queryContent('statement')
+  .where({ priority: { $not: { $gt: 0 } } })
+  .sort({ date: -1 })
+  .find()
 
-    useHead({
-      title: `Statements - ${config.short_title}`,
-    })
-    return { priorityStatements, statements }
-  },
-}
+useHead({
+  title: `Statements - ${config.short_title}`,
+})
 </script>
 
 <style lang="scss">
