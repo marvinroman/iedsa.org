@@ -1,12 +1,12 @@
-# Nuxt3 + Vuetify3 Example Template
+# Inland Empire DSA Website
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+The website is deployed on Github Pages infrastructure using this repository.
 
-An example template scaffolded using [Nuxt.js](https://v3.nuxtjs.org) and [Vuetify](https://next.vuetifyjs.com/) to start a new project.
+## Thanks
 
-## Why this template
+Site template create by [Binod Nepali](https://github.com/binodnepali) for running Nuxt 3 & Vuetify 3 together was cloned from [https://github.com/binodnepali/nuxt3-with-vuetify3-example-template](https://github.com/binodnepali/nuxt3-with-vuetify3-example-template). 
 
-This template includes pre-installed plugins suchas [prettier](https://prettier.io/), [eslint](https://eslint.org/), [stylelint](https://stylelint.io/), [lint-staged](https://github.com/okonet/lint-staged), [commitlint](https://commitlint.js.org/) and [standard version](https://github.com/conventional-changelog/standard-version) which helps to maintain project code quality.
+Instructions on how to deploy on Github pages was found at [https://alejandrosuarez.eu/blog/how-to-deploy-nuxt3-app-in-github-pages/](https://alejandrosuarez.eu/blog/how-to-deploy-nuxt3-app-in-github-pages/). 
 
 ## Before getting started
 
@@ -22,16 +22,16 @@ You can setup this project using npm or yarn package managers.
 
 ```bash
 # https
-git clone https://github.com/binodnepali/nuxt3-with-vuetify3-example-template.git
+git clone https://github.com/marvinroman/iedsa.org.git
 
 # ssh
-git clone git@github.com:binodnepali/nuxt3-with-vuetify3-example-template.git
+git clone git@github.com:marvinroman/iedsa.org.git
 ```
 
 ### Navigate to cloned repo
 
 ```bash
-cd nuxt3-with-vuetify3-example-template
+cd iedsa.org
 ```
 
 ### Setup
@@ -64,10 +64,10 @@ Build the application for production
 
 ```bash
 # yarn
-yarn build
+yarn generate
 
 # npm
-npm run build
+npm run generate
 ```
 
 Locally preview production build
@@ -146,4 +146,8 @@ npm run release
 
 ## References
 
-* Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+* Checkout Vuetify 3 [documentation](https://vuetifyjs.com/en/getting-started/installation/)  
+* Checkout Nuxt 3 [documentation](https://nuxt.com/docs/getting-started/introduction)  
+* Checkout Nuxt 3 Content [documentation](https://content.nuxtjs.org/get-started)  
+* Where to find [Material Icons](https://pictogrammers.com/library/mdi/)  
+* Checkout the Wiki for instructions.  
