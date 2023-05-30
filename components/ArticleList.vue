@@ -46,21 +46,16 @@
 
         <v-card-text>
           <div class="text--primary">
-            <div class="mb-1 tags">
-              <v-chip
-                v-for="tag in article.tags"
-                :key="tag.id"
-                outlined
-                class="mr-2"
-              >
+            <v-slide-group show-arrows>
+              <v-slide-group-item v-for="tag in article.tags" :key="tag.id">
                 <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
                   <v-icon class="ml-2" color="secondary" small>
                     mdi-tag
                   </v-icon>
                   {{ tag }}
                 </NuxtLink>
-              </v-chip>
-            </div>
+              </v-slide-group-item>
+            </v-slide-group>
             <div>
               {{ date.format(article.date, 'normalDateWithWeekday') }}
             </div>
