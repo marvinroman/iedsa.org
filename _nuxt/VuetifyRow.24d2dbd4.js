@@ -1,1 +1,0 @@
-import{k as t,r,o as n,c as s,a,l as c}from"./entry.2a73aa34.js";const l={};function _(o,f){const e=r("v-row");return n(),s(e,null,{default:a(()=>[c(o.$slots,"default")]),_:3})}const d=t(l,[["render",_]]);export{d as default};
