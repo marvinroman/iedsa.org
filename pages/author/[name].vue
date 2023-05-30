@@ -38,7 +38,8 @@ const allAuthors = [...uniqueAuthors].sort()
 
 const articles = await queryContent('article')
   .where({ author: name })
-  .sort({ date: 1 })
+  .where({ draft: { $not: true } })
+  .sort({ date: -1 })
   .find()
 
 const config = useAppConfig()

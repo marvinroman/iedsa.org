@@ -52,12 +52,14 @@ const allTags = [...uniqueTags].sort().pop()
 
 const articles = await queryContent('article')
   .where({ tags: { $contains: name } })
-  .sort({ date: 1 })
+  .where({ draft: { $not: true } })
+  .sort({ date: -1 })
   .find()
 
 const statements = await queryContent('statement')
   .where({ tags: { $contains: name } })
-  .sort({ date: 1 })
+  .where({ draft: { $not: true } })
+  .sort({ date: -1 })
   .find()
 
 const config = useAppConfig()
