@@ -1,0 +1,1 @@
+import{k as t,r as s,o as c,c as n,a as r,l as a}from"./entry.2c65d10d.js";const l={};function _(e,d){const o=s("v-code");return c(),n(o,null,{default:r(()=>[a(e.$slots,"default")]),_:3})}const p=t(l,[["render",_]]);export{p as default};
