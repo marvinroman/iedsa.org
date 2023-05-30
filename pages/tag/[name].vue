@@ -8,7 +8,7 @@
         </NuxtLink>
       </v-chip>
     </v-sheet>
-    <v-sheet>
+    <v-sheet v-if="articles.length > 0">
       <h2 class="mb-4">
         Articles tagged with:&nbsp;
         <span class="text-capitalize">{{ name }}</span>
@@ -21,8 +21,11 @@
         />
       </v-row>
     </v-sheet>
-    <v-divider class="my-6"></v-divider>
-    <v-sheet>
+    <v-divider
+      v-if="statements.length > 0 && articles.length > 0"
+      class="my-6"
+    ></v-divider>
+    <v-sheet v-if="statements.length > 0">
       <h2 class="mb-4">
         Statements tagged with:&nbsp;
         <span class="text-capitalize">{{ name }}</span>
@@ -43,12 +46,14 @@ const {
   params: { name },
 } = useRoute()
 
-const tagsQuery = await queryContent().only(['tags']).find()
+const tagsQuery = await queryContent()
+  .only(['tags'])
+  .where({ tags: { $exists: true } })
+  .find()
 const mappedTags = tagsQuery
   .map((tag) => tag.tags)
   .filter((tag) => Boolean(tag))
-const uniqueTags = new Set(mappedTags)
-const allTags = [...uniqueTags].sort().pop()
+const allTags = [...new Set(mappedTags.flat())].sort()
 
 const articles = await queryContent('article')
   .where({ tags: { $contains: name } })
