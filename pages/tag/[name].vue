@@ -49,6 +49,8 @@ const {
 const tagsQuery = await queryContent()
   .only(['tags'])
   .where({ tags: { $exists: true } })
+  .where({ draft: { $not: true } })
+  .where({ published: true })
   .find()
 const mappedTags = tagsQuery
   .map((tag) => tag.tags)
@@ -58,12 +60,14 @@ const allTags = [...new Set(mappedTags.flat())].sort()
 const articles = await queryContent('article')
   .where({ tags: { $contains: name } })
   .where({ draft: { $not: true } })
+  .where({ published: true })
   .sort({ date: -1 })
   .find()
 
 const statements = await queryContent('statement')
   .where({ tags: { $contains: name } })
   .where({ draft: { $not: true } })
+  .where({ published: true })
   .sort({ date: -1 })
   .find()
 

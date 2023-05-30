@@ -29,7 +29,11 @@ const {
   params: { name },
 } = useRoute()
 
-const authorsQuery = await queryContent().only(['author']).find()
+const authorsQuery = await queryContent()
+  .only(['author'])
+  .where({ draft: { $not: true } })
+  .where({ published: true })
+  .find()
 const mappedAuthors = authorsQuery
   .map((author) => author.author)
   .filter((author) => Boolean(author))
@@ -39,6 +43,7 @@ const allAuthors = [...uniqueAuthors].sort()
 const articles = await queryContent('article')
   .where({ author: name })
   .where({ draft: { $not: true } })
+  .where({ published: true })
   .sort({ date: -1 })
   .find()
 
