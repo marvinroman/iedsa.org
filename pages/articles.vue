@@ -20,12 +20,14 @@ const config = useAppConfig()
 
 const priorityArticles = await queryContent('article')
   .where({ priority: { $gt: 0 } })
+  .where({ draft: { $not: true } })
   .sort({ priority: -1, $numeric: true })
   .sort({ date: -1 })
   .find()
 
 const articles = await queryContent('article')
   .where({ priority: { $not: { $gt: 0 } } })
+  .where({ draft: { $not: true } })
   .sort({ date: -1 })
   .find()
 

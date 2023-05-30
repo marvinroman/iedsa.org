@@ -7,18 +7,19 @@
     "node": ">=16.15.0"
   },
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "postinstall": "nuxi prepare",
     "lint": "eslint --ext .ts,.js,.vue .",
     "lint:fix": "eslint --ext .ts,.js,.vue . --fix",
     "lint:style": "stylelint **/*.{css,scss,sass,html,vue}",
     "lint:style:fix": "stylelint **/*.{css,scss,sass,html,vue} --fix",
     "prepare": "husky install",
     "commit": "git-cz",
-    "release": "standard-version"
+    "release": "standard-version",
+    "deploy": "gh-pages --dotfiles -d .output/public"
   },
   "config": {
     "commitizen": {
@@ -54,6 +55,7 @@
     "vuetify": "^3.1.0"
   },
   "dependencies": {
-    "@nuxt/content": "^2.6.0"
+    "@nuxt/content": "^2.6.0",
+    "gh-pages": "^5.0.0"
   }
 }
