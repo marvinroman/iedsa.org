@@ -1,1 +1,0 @@
-import{r as t,o,c}from"./entry.2c65d10d.js";const s={__name:"VuetifyImg",props:{src:{type:String,default:void 0},contain:{type:String,default:void 0}},setup(n){return(a,r)=>{const e=t("v-img");return o(),c(e,{src:n.src,contain:!!n.contain},null,8,["src","contain"])}}};export{s as default};
