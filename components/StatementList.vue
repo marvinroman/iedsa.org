@@ -1,21 +1,11 @@
 <template>
   <v-col class="statements">
     <v-card class="elevation-6 fill-height" tile>
-      <v-badge
-        :model-value="statement.priority > 0"
-        icon="mdi-star"
-        color="primary"
-        rounded="circle"
-        offset-x="-8"
-        floating
-        location="right"
-      >
-        <NuxtLink :to="statement._path" class="text-decoration-none">
-          <v-card-title class="ma-1 pa-0 ml-3">
-            {{ statement.title }}
-          </v-card-title>
-        </NuxtLink>
-      </v-badge>
+      <NuxtLink :to="statement._path" class="text-decoration-none">
+        <v-card-title class="ma-1 pa-0 ml-3">
+          {{ statement.title }}
+        </v-card-title>
+      </NuxtLink>
 
       <v-card-text>
         <div class="text--primary">

@@ -23,21 +23,11 @@
             </div>
           </v-expand-transition>
         </v-img>
-        <v-badge
-          :model-value="article.priority > 0"
-          icon="mdi-star"
-          color="primary"
-          rounded="circle"
-          offset-x="-8"
-          floating
-          location="right"
-        >
-          <NuxtLink :to="article._path" class="text-decoration-none">
-            <v-card-title class="ma-1 pa-0 ml-3">
-              {{ article.title }}
-            </v-card-title>
-          </NuxtLink>
-        </v-badge>
+        <NuxtLink :to="article._path" class="text-decoration-none">
+          <v-card-title class="ma-1 pa-0 ml-3">
+            {{ article.title }}
+          </v-card-title>
+        </NuxtLink>
 
         <v-card-subtitle>
           {{ article.author }}&nbsp;
