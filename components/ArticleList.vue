@@ -54,7 +54,9 @@
                 class="mr-2"
               >
                 <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
-                  <v-icon class="ml-2" color="accent" small> mdi-tag </v-icon>
+                  <v-icon class="ml-2" color="secondary" small>
+                    mdi-tag
+                  </v-icon>
                   {{ tag }}
                 </NuxtLink>
               </v-chip>

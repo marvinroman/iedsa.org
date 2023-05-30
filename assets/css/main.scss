@@ -10,196 +10,205 @@
 @include font-face(ManifoldDSA, "../fonts/ManifoldDSA-Heavy", 800, normal, eot woff2 woff);
 
 * {
-    font-family: "ManifoldDSA";
+  font-family: "ManifoldDSA";
 }
 
 html {
-    font-size: 20px;
+  font-size: 20px;
+}
+
+ul {
+  padding-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .v-application {
-    p {
-        margin-bottom: 16px;
-        white-space: pre-wrap;
-        text-indent: 1rem;
-    }
+  p {
+    margin-bottom: 16px;
+    white-space: pre-wrap;
+    text-indent: 1rem;
+  }
 
-    .headline,
-    .title {
-        font-family: "ManifoldDSA", "sans-serif" !important;
-    }
+  .headline,
+  .title {
+    font-family: "ManifoldDSA", "sans-serif" !important;
+  }
 }
 
 .v-toolbar__title a.nolink {
-    color: var(--v-primary-darken2);
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: 500;
+  color: var(--v-primary-darken2);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
 
-    @include for-sm-phone-only {
-        font-size: 0.7rem;
-    }
-    @include for-phone-only {
-        font-size: 1.1rem;
-    }
-    @include for-tablet-portrait-up {
-        font-size: 1.25rem;
-    }
+  @include for-sm-phone-only {
+    font-size: 0.7rem;
+  }
+  @include for-phone-only {
+    font-size: 1.1rem;
+  }
+  @include for-tablet-portrait-up {
+    font-size: 1.25rem;
+  }
 }
 
 .articles,
 .statements {
-    .v-card-title {
-        font-size: 1.25rem;
-        font-weight: 500;
-    }
+  .v-card-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
 
-    .v-card-text {
-        height: 136px;
+  .v-card-text {
+    height: 136px;
 
-        .content {
-            text-overflow: ellipsis;
-            overflow: hidden;
-            // Addition lines for 2 line or multiline ellipsis
-            display: -webkit-box !important;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            white-space: normal;
-        }
-        .mb-1.tags {
-            height: 36px;
-            overflow: hidden;
-        }
+    .content {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      // Addition lines for 2 line or multiline ellipsis
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      white-space: normal;
     }
+    .mb-1.tags {
+      height: 36px;
+      overflow: hidden;
+    }
+  }
 }
 
 .v-col {
 
-    &.articles,
-    &.branches,
-    &.statements {
-        flex-basis: 0;
-        flex-grow: 1;
-        max-width: 100%;
-        flex: 0 0 100%;
+  &.articles,
+  &.branches,
+  &.statements {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    flex: 0 0 100%;
 
-        @include for-phone-only {
-            max-width: 100%;
-            flex: 0 0 100%;
-        }
-        @include for-tablet-portrait-up {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
-        @include for-tablet-landscape-up {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
-        @include for-desktop-up {
-            flex: 0 0 33.3333333333%;
-            max-width: 33.3333333333%;
-        }
-        @include for-big-desktop-up {
-            flex: 0 0 25%;
-            max-width: 25%;
-        }
+    @include for-phone-only {
+      max-width: 100%;
+      flex: 0 0 100%;
     }
+    @include for-tablet-portrait-up {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    @include for-tablet-landscape-up {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    @include for-desktop-up {
+      flex: 0 0 33.3333333333%;
+      max-width: 33.3333333333%;
+    }
+    @include for-big-desktop-up {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
 
-    &.column-2 {
-        @include for-phone-only {
-            max-width: 100%;
-            flex: 0 0 100%;
-        }
-        @include for-tablet-portrait-up {
-            max-width: 100%;
-            flex: 0 0 100%;
-        }
-        @include for-tablet-landscape-up {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
-        @include for-desktop-up {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
-        @include for-big-desktop-up {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
+  &.column-2 {
+    @include for-phone-only {
+      max-width: 100%;
+      flex: 0 0 100%;
     }
+    @include for-tablet-portrait-up {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+    @include for-tablet-landscape-up {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    @include for-desktop-up {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    @include for-big-desktop-up {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
 }
 
 /* MARKDOWN */
 .markdown {
-    img {
-        max-width: 100%;
-        max-height: 600px;
-    }
-    blockquote {
-        margin: 0;
-        border-left: 5px solid var(--v-primary-lighten2);
-        font-style: italic;
-        padding: 1.33em;
-        text-align: left;
-    }
-    pre.shiki {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
+  img {
+    max-width: 100%;
+    max-height: 600px;
+  }
+  blockquote {
+    margin: 0;
+    border-left: 5px solid var(--v-primary-lighten2);
+    font-style: italic;
+    padding: 1.33em;
+    text-align: left;
+  }
+  pre.shiki {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .gradient-border {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    position: relative;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  position: relative;
 
-    &.v-btn--icon {
-        border-radius: 50%;
-    
-        &::before {
-            border-radius: 50%;
-        }
-    }
-
-    &:hover::before {
-        background-position: -50% 0;
-        opacity: 1;
-    }
+  &.v-btn--icon {
+    border-radius: 50%;
 
     &::before {
-        background: linear-gradient(45deg, #fff, #fff 25%, #fffdb9 50%, #f8d692 75%, #ff8e8e);
-        background-size: 400% auto;
-        bottom: 0;
-        content: "";
-        left: 0;
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        opacity: 0.5;
-        padding: 2px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transition: background-position 0.3s ease-in-out, opacity 0.2s ease-in-out;
-        width: 100%;
+      border-radius: 50%;
     }
+  }
+
+  &:hover::before {
+    background-position: -50% 0;
+    opacity: 1;
+  }
+
+  &::before {
+    background: linear-gradient(45deg, #fff, #fff 25%, #fffdb9 50%, #f8d692 75%, #ff8e8e);
+    background-size: 400% auto;
+    bottom: 0;
+    content: "";
+    left: 0;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    padding: 2px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background-position 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    width: 100%;
+  }
 }
 
 .next-btn,
 .prev-btn {
-    font-size: 1.5rem;
-    background: rgba(255,255,255,0.25);
+  font-size: 1.5rem;
+  background: rgba(255,255,255,0.25);
 }
 
 .table-of-contents {
-    ul {
-        list-style: none;
-    }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .back-to-top {
-    position: fixed;
-    bottom: 6rem;
-    right: 2rem;
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
 }

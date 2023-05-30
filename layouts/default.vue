@@ -3,6 +3,8 @@
     <AppHeader :title="title" :menu="config.menu" />
     <v-main app>
       <slot />
+
+      <BackToTopButton />
     </v-main>
     <AppFooter :title="title" :socials="config.socials" />
   </v-app>
@@ -14,8 +16,8 @@ import { useDisplay } from 'vuetify'
 export default {
   setup() {
     const config = useAppConfig()
-    const { lgAndUp, mdAndUp } = useDisplay()
-    return { config, lgAndUp, mdAndUp }
+    const { lgAndUp, xlAndUp } = useDisplay()
+    return { config, lgAndUp, xlAndUp }
   },
   data: () => ({
     title: null,
@@ -24,7 +26,7 @@ export default {
     lgAndUp() {
       this.resize()
     },
-    mdAndUp() {
+    xlAndUp() {
       this.resize()
     },
   },
@@ -34,9 +36,9 @@ export default {
   methods: {
     resize() {
       this.title = this.config.short_title
-      if (this.lgAndUp) {
+      if (this.xlAndUp) {
         this.title = this.config.long_title
-      } else if (this.mdAndUp) {
+      } else if (this.lgAndUp) {
         this.title = this.config.medium_title
       }
     },

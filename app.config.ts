@@ -27,6 +27,11 @@ export default defineAppConfig({
       path: '/branches',
     },
     {
+      name: 'Donate',
+      icon: 'mdi-gift-outline',
+      path: '/donate',
+    },
+    {
       name: 'News',
       icon: 'mdi-newspaper-variant-multiple-outline',
       items: [

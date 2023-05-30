@@ -1,6 +1,6 @@
 <template>
   <v-container class="mt-0 pt-0 mx-auto">
-    <v-container class="v-window__container">
+    <v-container class="v-window__container mt-0 pt-0">
       <v-parallax
         v-if="article.image"
         :src="article.image"
@@ -59,7 +59,7 @@
               class="mr-2"
             >
               <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
-                <v-icon class="ml-2" color="accent" small> mdi-tag </v-icon>
+                <v-icon class="ml-2" color="secondary" small> mdi-tag </v-icon>
                 {{ tag }}
               </NuxtLink>
             </v-chip>
@@ -101,16 +101,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-btn
-      v-show="yScrolled > 800"
-      icon
-      size="x-large"
-      class="back-to-top"
-      color="primary"
-      @click="toTop"
-    >
-      <v-icon size="x-large">mdi-chevron-up</v-icon>
-    </v-btn>
   </v-container>
 </template>
 
@@ -133,34 +123,4 @@ const [prev, next] = await queryContent('article')
 
 const showTableOfContents =
   article.body.toc && article.body.toc.links.length > 0
-</script>
-
-<script>
-export default {
-  data() {
-    return {
-      scrollTimeout: 0,
-      yScrolled: 0,
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll: function () {
-      if (this.scrollTimeout) return
-      this.scrollTimeout = setTimeout(() => {
-        this.yScrolled = window.scrollY
-        clearTimeout(this.scrollTimeout)
-        this.scrollTimeout = 0
-      }, 100)
-    },
-    toTop: function () {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      })
-    },
-  },
-}
 </script>

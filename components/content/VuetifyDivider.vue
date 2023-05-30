@@ -1,12 +1,12 @@
 <template>
-  <v-divider :vertical="vertical"></v-divider>
+  <v-divider :vertical="Boolean(vertical)"></v-divider>
 </template>
 
 <script setup>
 defineProps({
   vertical: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: undefined,
   },
 })
 </script>

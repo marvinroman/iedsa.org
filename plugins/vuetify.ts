@@ -15,8 +15,26 @@ export default defineNuxtPlugin((nuxtApp) => {
       themes: {
         light: {
           colors: {
-            primary: '#1867C0',
-            secondary: '#5CBBF6',
+            primary: '#EC1F27',
+            secondary: '#F04C53', // "#424242"
+            accent: '#FBD2D4', // "#82B1FF"
+            error: '#a0050b', // "#FF5252"
+            info: '#0d6aa0', // "#2196F3"
+            success: '#00a02a', // "#4CAF50"
+            warning: '#efeb37', // "#FFC107"
+            anchor: '#0678b9',
+          },
+        },
+        dark: {
+          colors: {
+            primary: '#EC1F27',
+            secondary: '#F04C53', // "#424242"
+            accent: '#3C3434', // "#82B1FF"
+            error: '#a0050b', // "#FF5252"
+            info: '#0d6aa0', // "#2196F3"
+            success: '#00a02a', // "#4CAF50"
+            warning: '#efeb37', // "#FFC107"
+            anchor: '#0678b9',
           },
         },
       },

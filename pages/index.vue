@@ -1,5 +1,6 @@
 <template>
-  <v-container>
+  <v-container fluid class="pt-0 mt-0 px-0 mx-0">
+    <HeroCallToAction />
     <v-container>
       <v-row>
         <v-col class="column-2">
@@ -49,7 +50,7 @@
 </template>
 
 <script setup>
-const workingGroups = await queryContent('workinggroups').find()
+const workingGroups = await queryContent('_workinggroups').find()
 const config = useAppConfig()
 
 useHead({
