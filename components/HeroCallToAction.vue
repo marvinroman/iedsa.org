@@ -18,10 +18,11 @@
     <v-card-actions>
       <v-btn
         href="https://act.dsausa.org/donate/membership"
-        class="mx-auto mt-6 text-white"
+        class="mx-auto mt-6 text-white gradient-border"
         target="_blank"
         rel="noopener noreferrer"
         size="x-large"
+        variant="text"
         >Join Us Today!</v-btn
       >
     </v-card-actions>
