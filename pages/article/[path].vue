@@ -108,10 +108,9 @@
 import { useDate } from 'vuetify/labs/date'
 const date = useDate()
 const { path } = useRoute()
-const formattedPath = path.endsWith('/') ? path.slice(0, -1) : path
 const article = await queryContent()
   .where({
-    _path: formattedPath,
+    _path: path.replace(/\/$/, ''),
   })
   .findOne()
 
@@ -119,8 +118,10 @@ useContentHead(article)
 
 const [prev, next] = await queryContent('article')
   .only(['_path', 'title'])
+  .where({ draft: { $not: true } })
+  .where({ published: true })
   .sort({ date: -1 })
-  .findSurround(formattedPath)
+  .findSurround(path.replace(/\/$/, ''))
 
 const showTableOfContents =
   article.body.toc && article.body.toc.links.length > 0

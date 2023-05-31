@@ -74,6 +74,8 @@ useContentHead(article)
 
 const [prev, next] = await queryContent('statement')
   .only(['_path', 'title'])
+  .where({ draft: { $not: true } })
+  .where({ published: true })
   .sort({ date: -1 })
   .findSurround(path.replace(/\/$/, ''))
 </script>
