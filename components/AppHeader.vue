@@ -93,14 +93,6 @@
             {{ title }}
           </span>
         </NuxtLink>
-        <v-btn
-          v-ripple="{ class: 'text-primary' }"
-          text
-          href="/"
-          class="ml-2 gradient-border"
-          size="large"
-        >
-        </v-btn>
       </v-toolbar-title>
 
       <v-spacer />
