@@ -72,9 +72,9 @@ const article = await queryContent()
 
 useContentHead(article)
 
-const [prev, next] = await queryContent()
+const [prev, next] = await queryContent('statement')
   .only(['_path', 'title'])
-  .sort({ date: 1 })
+  .sort({ date: -1 })
   .findSurround(path.replace(/\/$/, ''))
 </script>
 
