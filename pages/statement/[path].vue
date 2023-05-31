@@ -53,9 +53,7 @@
         </div>
       </v-card-text>
     </v-card>
-    <v-divider></v-divider>
-
-    <v-sheet class="pa-8 bg-grey-lighten-5">
+    <v-sheet class="pa-8 bg-grey-lighten-5 post-body">
       <ContentRenderer :value="article" />
     </v-sheet>
   </v-container>

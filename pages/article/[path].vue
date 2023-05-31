@@ -72,18 +72,17 @@
       </v-card>
     </v-sheet>
 
-    <v-container class="pa-0">
-      <v-row>
-        <v-col class="post-body">
+    <v-row no-gutters>
+      <v-col cols="9">
+        <v-sheet class="post-body">
           <ContentRenderer
             :value="article"
             class="bg-grey-lighten-3 py-8 px-4"
           />
-        </v-col>
-        <v-col
-          v-if="showTableOfContents"
-          class="table-of-contents d-none d-md-block"
-        >
+        </v-sheet>
+      </v-col>
+      <v-col v-if="showTableOfContents" cols="3" class="d-none d-md-flex">
+        <v-sheet class="table-of-contents pa-4">
           <h2>Contents</h2>
           <ul>
             <li v-for="link in article.body.toc.links" :key="link.text">
@@ -99,9 +98,9 @@
               </ul>
             </li>
           </ul>
-        </v-col>
-      </v-row>
-    </v-container>
+        </v-sheet>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
