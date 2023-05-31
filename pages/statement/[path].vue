@@ -60,31 +60,39 @@
 </template>
 
 <script setup>
-import { useDate } from 'vuetify/labs/date'
-
 // Using the `useDate` function to create a `date` reactive reference
+import { useDate } from 'vuetify/labs/date'
 const date = useDate()
 
-// Getting the path from the current route
-const { path } = useRoute()
+const { page, next, prev } = useContent()
+useContentHead(page)
+const statement = page
 
-// Getting the content for the current markdown content from the path
-const statement = await queryContent()
-  .where({
-    _path: path.replace(/\/$/, ''), // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
-  })
-  .findOne()
+// import { useDate } from 'vuetify/labs/date'
 
-// Applying the frontmatter from the markdown file to the meta head
-useContentHead(statement)
+// // Using the `useDate` function to create a `date` reactive reference
+// const date = useDate()
 
-// Querying the content for previous and next statements around the current statement
-const [prev, next] = await queryContent('statement')
-  .only(['_path', 'title'])
-  .where({ draft: { $not: true } })
-  .where({ published: true })
-  .sort({ date: -1 })
-  .findSurround(path.replace(/\/$/, '')) // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
+// // Getting the path from the current route
+// const { path } = useRoute()
+
+// // Getting the content for the current markdown content from the path
+// const statement = await queryContent()
+//   .where({
+//     _path: path.replace(/\/$/, ''), // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
+//   })
+//   .findOne()
+
+// // Applying the frontmatter from the markdown file to the meta head
+// useContentHead(statement)
+
+// // Querying the content for previous and next statements around the current statement
+// const [prev, next] = await queryContent('statement')
+//   .only(['_path', 'title'])
+//   .where({ draft: { $not: true } })
+//   .where({ published: true })
+//   .sort({ date: -1 })
+//   .findSurround(path.replace(/\/$/, '')) // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
 </script>
 
 <style scoped lang="scss">

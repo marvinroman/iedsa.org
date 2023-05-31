@@ -81,7 +81,7 @@
           />
         </v-sheet>
       </v-col>
-      <v-col v-if="showTableOfContents" cols="3" class="d-none d-md-flex">
+      <v-col v-if="toc && toc.links" cols="3" class="d-none d-md-flex">
         <v-sheet class="table-of-contents pa-4">
           <h2>Contents</h2>
           <ul>
@@ -104,33 +104,41 @@
   </v-container>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Using the `useDate` function to create a `date` reactive reference
 import { useDate } from 'vuetify/labs/date'
 const date = useDate()
 
-// Getting the path from the current route
-const { path } = useRoute()
+const { page, toc, next, prev } = useContent()
+useContentHead(page)
+const article = page
 
-// Getting the content for the current markdown content from the path
-const article = await queryContent()
-  .where({
-    _path: path.replace(/\/$/, ''), // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
-  })
-  .findOne()
+// // Using the `useDate` function to create a `date` reactive reference
+// import { useDate } from 'vuetify/labs/date'
+// const date = useDate()
 
-// Applying the frontmatter from the markdown file to the meta head
-useContentHead(article)
+// // Getting the path from the current route
+// const { path } = useRoute()
 
-// Querying the content for previous and next articles around the current article
-const [prev, next] = await queryContent('article')
-  .only(['_path', 'title'])
-  .where({ draft: { $not: true } })
-  .where({ published: true })
-  .sort({ date: -1 })
-  .findSurround(path.replace(/\/$/, '')) // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
+// // Getting the content for the current markdown content from the path
+// const article = await queryContent()
+//   .where({
+//     _path: path.replace(/\/$/, ''), // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
+//   })
+//   .findOne()
 
-// Checking if the article has a table of contents to determine if it should be displayed
-const showTableOfContents =
-  article.body.toc && article.body.toc.links.length > 0
+// // Applying the frontmatter from the markdown file to the meta head
+// useContentHead(article)
+
+// // Querying the content for previous and next articles around the current article
+// const [prev, next] = await queryContent('article')
+//   .only(['_path', 'title'])
+//   .where({ draft: { $not: true } })
+//   .where({ published: true })
+//   .sort({ date: -1 })
+//   .findSurround(path.replace(/\/$/, '')) // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
+
+// // Checking if the article has a table of contents to determine if it should be displayed
+// const showTableOfContents =
+//   article.body.toc && article.body.toc.links.length > 0
 </script>
