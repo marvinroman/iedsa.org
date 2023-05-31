@@ -1,0 +1,1 @@
+import{r as t,o as c,c as o}from"./entry.234c2c0b.js";const m={__name:"VuetifyImage",props:{src:{type:String,default:"primary"}},setup(e){return(s,n)=>{const r=t("v-img");return c(),o(r,{src:e.src},null,8,["src"])}}};export{m as default};
