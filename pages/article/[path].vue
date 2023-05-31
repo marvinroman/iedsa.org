@@ -107,21 +107,22 @@
 <script setup>
 import { useDate } from 'vuetify/labs/date'
 const date = useDate()
-const { fullPath, path } = useRoute()
+const { path } = useRoute()
+const formattedPath = path.endsWith('/') ? path.slice(0, -1) : path
 // eslint-disable-next-line no-console
 console.debug({ fullPath, path })
-const article = await queryContent('article')
+const article = await queryContent()
   .where({
-    _path: fullPath,
+    _path: formattedPath,
   })
   .findOne()
 
 useContentHead(article)
 
-const [prev, next] = await queryContent('article')
+const [prev, next] = await queryContent()
   .only(['_path', 'title'])
   .sort({ date: -1 })
-  .findSurround(fullPath)
+  .findSurround(formattedPath)
 
 const showTableOfContents =
   article.body.toc && article.body.toc.links.length > 0
