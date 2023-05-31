@@ -1,1 +1,0 @@
-import{r,o,c as n}from"./entry.b2d1c81f.js";const l={__name:"VuetifyDivider",props:{vertical:{type:String,default:void 0}},setup(e){return(a,c)=>{const t=r("v-divider");return o(),n(t,{vertical:!!e.vertical},null,8,["vertical"])}}};export{l as default};
