@@ -109,8 +109,6 @@ import { useDate } from 'vuetify/labs/date'
 const date = useDate()
 const { path } = useRoute()
 const formattedPath = path.endsWith('/') ? path.slice(0, -1) : path
-// eslint-disable-next-line no-console
-console.debug({ fullPath, path })
 const article = await queryContent()
   .where({
     _path: formattedPath,
