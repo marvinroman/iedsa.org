@@ -25,21 +25,25 @@
 </template>
 
 <script setup>
+// pull the name parameter from the url which will be '/author/:name'
 const {
   params: { name },
 } = useRoute()
 
+// find all authors that are contained within the content
 const authorsQuery = await queryContent()
   .only(['author'])
   .where({ draft: { $not: true } })
   .where({ published: true })
   .find()
+// sort and return unique authors
 const mappedAuthors = authorsQuery
   .map((author) => author.author)
   .filter((author) => Boolean(author))
 const uniqueAuthors = new Set(mappedAuthors)
 const allAuthors = [...uniqueAuthors].sort()
 
+// find all articles tagged with the same article
 const articles = await queryContent('article')
   .where({ author: name })
   .where({ draft: { $not: true } })
@@ -47,8 +51,9 @@ const articles = await queryContent('article')
   .sort({ date: -1 })
   .find()
 
+// pull the app config to help set page title
 const config = useAppConfig()
-useHead({
-  title: `Author - ${name} - ${config.short_title}`,
-})
+
+// dynamically set the page title
+useHead({ title: `Author - ${name} - ${config.short_title}` })
 </script>

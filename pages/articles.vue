@@ -16,8 +16,7 @@
 </template>
 
 <script setup>
-const config = useAppConfig()
-
+// query for all priority & active articles sort by priority first and then date both in DESC order
 const priorityArticles = await queryContent('article')
   .where({ priority: { $gt: 0 } })
   .where({ draft: { $not: true } })
@@ -26,6 +25,7 @@ const priorityArticles = await queryContent('article')
   .sort({ date: -1 })
   .find()
 
+// query all non-priority articles and sort by date in DESC order
 const articles = await queryContent('article')
   .where({ priority: { $not: { $gt: 0 } } })
   .where({ draft: { $not: true } })
@@ -33,9 +33,11 @@ const articles = await queryContent('article')
   .sort({ date: -1 })
   .find()
 
-useHead({
-  title: `Articles - ${config.short_title}`,
-})
+// pull the app config to help set page title
+const config = useAppConfig()
+
+// dynamically set the page title
+useHead({ title: `Articles - ${config.short_title}` })
 </script>
 
 <style scoped lang="scss">

@@ -16,8 +16,7 @@
 </template>
 
 <script setup>
-const config = useAppConfig()
-
+// query for all priority & active statements sort by priority first and then date both in DESC order
 const priorityStatements = await queryContent('statement')
   .where({ priority: { $gt: 0 } })
   .where({ draft: { $not: true } })
@@ -26,6 +25,7 @@ const priorityStatements = await queryContent('statement')
   .sort({ date: -1 })
   .find()
 
+// query all non-priority statements and sort by date in DESC order
 const statements = await queryContent('statement')
   .where({ priority: { $not: { $gt: 0 } } })
   .where({ draft: { $not: true } })
@@ -33,9 +33,11 @@ const statements = await queryContent('statement')
   .sort({ date: -1 })
   .find()
 
-useHead({
-  title: `Statements - ${config.short_title}`,
-})
+// pull the app config to help set page title
+const config = useAppConfig()
+
+// dynamically set the page title
+useHead({ title: `Statements - ${config.short_title}` })
 </script>
 
 <style lang="scss">

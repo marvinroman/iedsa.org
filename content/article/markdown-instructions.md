@@ -63,6 +63,8 @@ Headings will automatically generate a table of contents for levels 2 & 3.
 
 ![image](https://dummyimage.com/640x360/fff/aaa)
 
+:spacer
+
 ## Bold & Italics
 
 **Syntax**
@@ -75,6 +77,7 @@ Headings will automatically generate a table of contents for levels 2 & 3.
 
 **Lorem** *ipsum* _dolor_ __sit__ amet.
 
+:spacer
 
 ## Blockquotes
 
@@ -88,6 +91,8 @@ Headings will automatically generate a table of contents for levels 2 & 3.
 
 > Tempor orci eu lobortis elementum nibh tellus molestie nunc. Risus commodo viverra maecenas accumsan lacus. 
 
+:spacer
+
 ## Highlighting
 
 **Syntax**
@@ -100,7 +105,11 @@ Headings will automatically generate a table of contents for levels 2 & 3.
 
 `Eget aliquet nibh praesent tristique magna sit`. Ut pharetra sit amet aliquam id diam.  
 
+:spacer
+
 ## Lists
+
+:spacer
 
 ### Ordered(numbered) Lists
 
@@ -115,6 +124,8 @@ Headings will automatically generate a table of contents for levels 2 & 3.
 
 1. Cake bonbon shortbread macaroon muffin. Cupcake danish shortbread oat cake bear claw cupcake soufflé oat cake brownie. Soufflé tootsie roll cupcake muffin sweet roll.
 2. Tart lollipop tiramisu biscuit sweet roll chocolate bar sugar plum ice cream bear claw. Gummies cake jelly-o carrot cake chupa chups ice cream. Sweet gingerbread soufflé donut wafer. 
+
+:spacer
 
 ### Unordered Lists
 
@@ -137,6 +148,8 @@ or
 - Brigantine flogging keel American Main sloop bowsprit measured fer yer chains draught jib black jack.    
 - Shiver me timbers Spanish Main heave down scurvy parrel port starboard Chain Shot lugger to go on account.    
 
+:spacer
+
 ### Task Lists
 
 **Syntax**
@@ -153,7 +166,11 @@ or
 - [ ] Oh, I sure like her, Marty, she is such a sweet girl. Isn't tonight the night of the big date?
 - [x] Its good.
 
+:spacer
+
 ## Strikethrough
+
+:spacer
 
 **Syntax**
 
@@ -164,6 +181,8 @@ or
 **Output**
 
 ~~That's right, he's gonna be mayor.~~
+
+:spacer
 
 ## Tables
 
@@ -182,6 +201,8 @@ or
 | ----------- | ----------- |
 | Header | Title |
 | Paragraph | Text | 
+
+:spacer
 
 ## Code Block
 
@@ -207,7 +228,11 @@ or
 }
 ``` 
 
+:spacer
+
 ## Horizontal line
+
+:spacer
 
 **Syntax**
 
@@ -218,6 +243,8 @@ or
 **Output**
 
 ---
+
+:spacer
 
 ## Change text color
 
@@ -233,23 +260,63 @@ To see more about colors go to the vuetify [documentation](https://vuetifyjs.com
 
 [We are]{.text-grey-darken-4} the [Inland Empire]{.text-primary} [Chapter]{.text-primary-lighten-4} of the [Democratic]{.text-primary-darken-4} [Socialists]{.text-primary} of [America]{.text-blue}
 
-## Vuetify Components
+:spacer
 
-### Button 
+## Vertical Spacer
+
+To create vertical spacing between elements, defaults to 4, can be set to any number between 0-16. 
 
 **Syntax**
 
 ```markdown
-::vuetify-button{color="primary"}
-Test button text
+:spacer
+:spacer{height=8}
+```
+
+:spacer
+
+## Vuetify Components
+
+:spacer
+
+### Button 
+
+To learn more about button API you can review the [documentation](https://vuetifyjs.com/en/api/v-btn/). 
+
+Most props are available and any hyphen separated names like `append-icon` will instead be `appendIcon`.  
+
+**Syntax**
+
+```markdown
+::vuetify-btn
+Normal
+::
+::vuetify-btn{variant="text"}
+Text Variant
+::
+::vuetify-btn{to="/" color="anchor"}
+Home
+::
+::vuetify-btn{href="https://act.dsausa.org/donate/membership" blank=true color="primary"}
+Join
 ::
 ```
 
 **Output**
-
-::vuetify-button{color="primary"}
-Test button text
+::vuetify-btn
+Normal
 ::
+::vuetify-btn{variant="text"}
+Text Variant
+::
+::vuetify-btn{to="/" color="anchor"}
+Home
+::
+::vuetify-btn{href="https://act.dsausa.org/donate/membership" blank=true color="primary"}
+Join
+::
+
+:spacer
 
 ### Columns
 
@@ -268,7 +335,7 @@ Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Pretium
 
 :::vuetify-col{.column-2}
 
-::::vuetify-image
+::::vuetify-img
 ---
 src: "/images/area-map.jpg"
 ---
@@ -291,7 +358,7 @@ Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Pretium
 
 :::vuetify-col{.column-2}
 
-::::vuetify-image
+::::vuetify-img
 ---
 src: "/images/area-map.jpg"
 ---
@@ -299,7 +366,11 @@ src: "/images/area-map.jpg"
 :::
 ::
 
+:spacer
+
 ### Dividers
+
+:spacer
 
 #### Vertical
 
@@ -308,6 +379,8 @@ src: "/images/area-map.jpg"
 ```markdown
 :vuetify-divider{vertical=true}
 ```
+
+:spacer
 
 #### Horizontal
 
@@ -321,25 +394,87 @@ src: "/images/area-map.jpg"
 
 :vuetify-divider{.my-4}
 
+:spacer
+
 ### Images
+
+For full reference of props available in the images API see [documentation](https://vuetifyjs.com/en/api/v-img/). 
+
+Hyphen seperated props like `aspect-ratio` will become `aspectRatio`.  
 
 **Syntax**
 
 ```markdown
-::vuetify-image
+::vuetify-img
 ---
 src: "/images/area-map.jpg"
-contain: "true"
+contain: true
 ---
 ::
 ```
 
 or 
 
-```mardown
-:vuetify-image{src: "/images/area-map.jpg" contain: "true"}
+```markdown
+:vuetify-img{src="/images/area-map.jpg" contain=true height=300}
 ```
 
 **Output**
 
-:vuetify-image{src: "/images/area-map.jpg" contain: "true"}
+:vuetify-img{src="/images/area-map.jpg" contain=true height=300}
+
+:spacer 
+
+### Tables
+
+For full reference of props available in the tables API see [documentation](https://vuetifyjs.com/en/api/v-table/). 
+
+Hyphen seperated props like `fixed-footer` will become `fixedFooter`.  
+
+**Syntax**
+
+```markdown
+::vuetify-table{density="compact"}
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text | 
+::
+::vuetify-table{hover=true}
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text | 
+::
+::vuetify-table{theme="dark" density="compact" hover=true}
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text | 
+::
+```
+
+::vuetify-table{density="compact"}
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text | 
+::
+
+:spacer
+
+::vuetify-table{hover=true}
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text | 
+::
+
+:spacer
+
+::vuetify-table{theme="dark" density="compact" hover=true}
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text | 
+::

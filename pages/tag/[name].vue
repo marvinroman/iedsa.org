@@ -42,21 +42,26 @@
 </template>
 
 <script setup>
+// pull the name parameter from the url which will be '/tag/:name'
 const {
   params: { name },
 } = useRoute()
 
+// find all tags that are contained within the content
 const tagsQuery = await queryContent()
   .only(['tags'])
   .where({ tags: { $exists: true } })
   .where({ draft: { $not: true } })
   .where({ published: true })
   .find()
+
+// sort and return unique tags
 const mappedTags = tagsQuery
   .map((tag) => tag.tags)
   .filter((tag) => Boolean(tag))
 const allTags = [...new Set(mappedTags.flat())].sort()
 
+// find all articles tagged with the same tag
 const articles = await queryContent('article')
   .where({ tags: { $contains: name } })
   .where({ draft: { $not: true } })
@@ -64,6 +69,7 @@ const articles = await queryContent('article')
   .sort({ date: -1 })
   .find()
 
+// find all statements tagged with the same tag
 const statements = await queryContent('statement')
   .where({ tags: { $contains: name } })
   .where({ draft: { $not: true } })
@@ -71,8 +77,9 @@ const statements = await queryContent('statement')
   .sort({ date: -1 })
   .find()
 
+// pull the app config to help set page title
 const config = useAppConfig()
-useHead({
-  title: `Tag - ${name} - ${config.short_title}`,
-})
+
+// dynamically set the page title
+useHead({ title: `Tag - ${name} - ${config.short_title}` })
 </script>

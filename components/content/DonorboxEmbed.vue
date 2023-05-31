@@ -8,11 +8,7 @@
     scrolling="no"
     height="900px"
     width="100%"
-    :style="
-      'max-width: ' +
-      maxWidth +
-      '; min-width: 310px; max-height: none !important'
-    "
+    :style="`max-width: ${maxWidth}; min-width: 310px; max-height: none !important`"
   ></iframe>
 </template>
 
@@ -28,7 +24,6 @@ defineProps({
   },
 })
 
-useHead({
-  script: [{ src: 'https://donorbox.org/widget.js' }],
-})
+// load donorbox script
+useHead({ script: [{ src: 'https://donorbox.org/widget.js' }] })
 </script>

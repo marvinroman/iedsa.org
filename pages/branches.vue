@@ -5,8 +5,12 @@
 </template>
 
 <script setup>
+// get current page path
 const { path } = useRoute()
-const page = queryContent().where({ _path: path })
 
+// return page content for path
+const page = queryContent().where({ _path: path }).findOne()
+
+// use content to create set head
 useContentHead(page)
 </script>

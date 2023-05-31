@@ -29,14 +29,14 @@
     <v-card class="ma-0 pa-0" flat>
       <v-card-title class="mt-4">
         <h1>
-          {{ article.title }}
+          {{ statement.title }}
         </h1>
       </v-card-title>
 
       <v-card-text>
         <div class="tags-container my-4">
           <v-chip
-            v-for="tag in article.tags"
+            v-for="tag in statement.tags"
             :key="tag.id"
             outlined
             class="mr-2"
@@ -49,12 +49,12 @@
         </div>
 
         <div class="px-xs-5 my-1">
-          Date: {{ date.format(article.date, 'fullDateWithWeekday') }}
+          Date: {{ date.format(statement.date, 'fullDateWithWeekday') }}
         </div>
       </v-card-text>
     </v-card>
     <v-sheet class="pa-8 bg-grey-lighten-5 post-body">
-      <ContentRenderer :value="article" />
+      <ContentRenderer :value="statement" />
     </v-sheet>
   </v-container>
 </template>
@@ -62,22 +62,29 @@
 <script setup>
 import { useDate } from 'vuetify/labs/date'
 
+// Using the `useDate` function to create a `date` reactive reference
 const date = useDate()
+
+// Getting the path from the current route
 const { path } = useRoute()
-const article = await queryContent()
+
+// Getting the content for the current markdown content from the path
+const statement = await queryContent()
   .where({
-    _path: path.replace(/\/$/, ''),
+    _path: path.replace(/\/$/, ''), // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
   })
   .findOne()
 
-useContentHead(article)
+// Applying the frontmatter from the markdown file to the meta head
+useContentHead(statement)
 
+// Querying the content for previous and next statements around the current statement
 const [prev, next] = await queryContent('statement')
   .only(['_path', 'title'])
   .where({ draft: { $not: true } })
   .where({ published: true })
   .sort({ date: -1 })
-  .findSurround(path.replace(/\/$/, ''))
+  .findSurround(path.replace(/\/$/, '')) // important for when it's a static site on GitHub it will add a trailing slash for the directory which will change the query
 </script>
 
 <style scoped lang="scss">

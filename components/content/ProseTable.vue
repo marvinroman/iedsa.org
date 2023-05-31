@@ -1,5 +1,5 @@
 <template>
-  <v-table :hover="hover" :density="density">
+  <v-table :hover="hover" :density="density" :theme="theme">
     <slot />
   </v-table>
 </template>

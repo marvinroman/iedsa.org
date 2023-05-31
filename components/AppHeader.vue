@@ -165,6 +165,7 @@ export default {
     rail: false,
   }),
   computed: {
+    // returns icon based on whether the side menu is active as a rail (narrow)
     rail_icon() {
       return this.rail ? 'mdi-chevron-right' : 'mdi-chevron-left'
     },

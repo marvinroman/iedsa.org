@@ -3,7 +3,7 @@
     v-show="yScrolled > 800"
     icon
     size="x-large"
-    class="back-to-top"
+    class="back-to-top gradient-border"
     color="primary"
     @click="toTop"
   >

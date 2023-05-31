@@ -67,20 +67,15 @@
   </v-col>
 </template>
 
-<script>
+<script setup>
+// Using the `useDate` function to create a `date` reactive reference
 import { useDate } from 'vuetify/labs/date'
+const date = useDate()
 
-export default {
-  props: {
-    article: {
-      type: Object,
-      default: null,
-    },
+defineProps({
+  article: {
+    type: Object,
+    default: null,
   },
-  setup() {
-    const date = useDate()
-
-    return { date }
-  },
-}
+})
 </script>

@@ -50,10 +50,12 @@
 </template>
 
 <script setup>
+// query working group folder
 const workingGroups = await queryContent('_workinggroups').find()
+
+// pull the app config to help set page title
 const config = useAppConfig()
 
-useHead({
-  title: `Home - ${config.short_title}`,
-})
+// dynamically set the page title
+useHead({ title: `Home - ${config.short_title}` })
 </script>
