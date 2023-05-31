@@ -71,18 +71,19 @@
         </v-card-text>
       </v-card>
     </v-sheet>
-    <v-divider></v-divider>
 
     <v-container class="pa-0">
       <v-row>
-        <v-col>
+        <v-col class="post-body">
           <ContentRenderer
             :value="article"
             class="bg-grey-lighten-3 py-8 px-4"
           />
         </v-col>
-        <v-divider v-if="showTableOfContents" vertical></v-divider>
-        <v-col v-if="showTableOfContents" cols="3" class="table-of-contents">
+        <v-col
+          v-if="showTableOfContents"
+          class="table-of-contents d-none d-md-block"
+        >
           <h2>Contents</h2>
           <ul>
             <li v-for="link in article.body.toc.links" :key="link.text">

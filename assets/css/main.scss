@@ -17,12 +17,6 @@ html {
   font-size: 20px;
 }
 
-ul {
-  padding-left: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
 .v-application {
   p {
     margin-bottom: 16px;
@@ -52,6 +46,7 @@ ul {
     font-size: 1.25rem;
   }
 }
+
 
 .articles,
 .statements {
@@ -119,6 +114,28 @@ ul {
     }
   }
 
+  &.post-body {
+    max-width: 100%;
+    flex: 0 0 100%;
+
+    @include for-tablet-landscape-up {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+  }
+
+  &.table-of-contents {
+    border: 1px solid rgba(var(--v-theme-on-background), var(--v-border-opacity));
+    margin-top: 12px;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
   &.column-2 {
     @include for-phone-only {
       max-width: 100%;
@@ -144,21 +161,48 @@ ul {
 }
 
 /* MARKDOWN */
-.markdown {
+div[data-content-id^="content"][data-content-id$=".md"] {
   img {
     max-width: 100%;
     max-height: 600px;
   }
+
   blockquote {
-    margin: 0;
-    border-left: 5px solid var(--v-primary-lighten2);
+    border-left: 5px solid rgb(var(--v-theme-primary-lighten-4));
     font-style: italic;
-    padding: 1.33em;
+    padding: 0 1.33em;
+    margin: 1.33em 0;
     text-align: left;
   }
-  pre.shiki {
+
+  code {
+    background-color: rgb(var(--v-theme-accent));
+    color: rgb(var(--v-theme-on-accent));
+  }
+
+  .task-list-item input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+
+  .v-code {
     margin-top: 1rem;
     margin-bottom: 1rem;
+
+    pre {
+      overflow-x: scroll;
+      code {
+        background-color: inherit;
+        color: inherit;
+      }
+    }
+  }
+
+
+  ul,
+  ol {
+    padding-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -204,15 +248,6 @@ ul {
 .prev-btn {
   font-size: 1.5rem;
   background: rgba(255,255,255,0.25);
-}
-
-.table-of-contents {
-  ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 .back-to-top {

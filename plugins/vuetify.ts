@@ -12,8 +12,15 @@ export default defineNuxtPlugin((nuxtApp) => {
     components,
     directives,
     theme: {
+      defaultTheme: 'light',
+      variations: {
+        colors: ['primary', 'secondary'],
+        lighten: 4,
+        darken: 4,
+      },
       themes: {
         light: {
+          dark: false,
           colors: {
             primary: '#EC1F27',
             secondary: '#F04C53', // "#424242"
@@ -26,6 +33,7 @@ export default defineNuxtPlugin((nuxtApp) => {
           },
         },
         dark: {
+          dark: true,
           colors: {
             primary: '#EC1F27',
             secondary: '#F04C53', // "#424242"
