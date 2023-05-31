@@ -61,20 +61,21 @@
 
 <script setup>
 import { useDate } from 'vuetify/labs/date'
+
 const date = useDate()
 const { path } = useRoute()
-const article = await queryContent('statement')
+const article = await queryContent()
   .where({
-    _path: path,
+    _path: path.replace(/\/$/, ''),
   })
   .findOne()
 
 useContentHead(article)
 
-const [prev, next] = await queryContent('statement')
+const [prev, next] = await queryContent()
   .only(['_path', 'title'])
   .sort({ date: 1 })
-  .findSurround(path)
+  .findSurround(path.replace(/\/$/, ''))
 </script>
 
 <style scoped lang="scss">
