@@ -1,1 +1,0 @@
-import{r as s,o as l,c,a,l as n}from"./entry.522f0328.js";const u={__name:"VuetifyCol",props:{cols:{type:String,default:void 0}},setup(o){return(e,r)=>{const t=s("v-col");return l(),c(t,{cols:o.cols},{default:a(()=>[n(e.$slots,"default")]),_:3},8,["cols"])}}};export{u as default};
