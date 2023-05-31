@@ -13,30 +13,35 @@ jobs:
     steps:      
       - name: Checkout
         uses: actions/checkout@v3      
+
       - name: Generate static Nuxt 3 files        
         uses: actions/setup-node@v3        
         with:          
           node-version: "18"          
           cache: 'yarn'            
           
-      - name: Install packages
+      - name: Install dependencies
         run: yarn install          
 
-      - name: Nuxt generate
+      - name: Static HTML export with Nuxt
         run: yarn generate      
           
-      - name: Init new repo in $BUILD_FOLDER and commit generated files        
-        run: |          
-          grep -rnwl "<link rel=\"prefetch\"" $BUILD_FOLDER | xargs -d '\n' sed -i 's$<link rel="prefetch" href="[^"]*\.\(jpg\|png\|webm\|jpeg\|ttg\|svg\|gif\)">$$g'          
-          cd $BUILD_FOLDER          
-          touch .nojekyll          
-          git init          
-          git add -A          
-          git config --local user.email "action@github.com"          
-          git config --local user.name "GitHub Action"          
-          git commit -m 'deploy'      
+      - name: Disable jekyll rules for the site
+        run: touch ${BUILD_FOLDER}/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ".output/public"
           
-      - name: Deploy        
-        uses: JamesIves/github-pages-deploy-action@v4        
-        with:          
-          folder: ${{env.BUILD_FOLDER}}
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
