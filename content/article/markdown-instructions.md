@@ -5,7 +5,7 @@ author: Marvin Roman
 title: Website Markdown Instructions
 published: true
 date: 2023-05-30
-excerpt: Instructions on 
+excerpt: Cheatsheet for markdown syntax that can be used to update or create pages.  
 tags: ['how to', 'markdown', 'website']
 draft: false
 ---
