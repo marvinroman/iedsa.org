@@ -46,10 +46,10 @@
                 </NuxtLink>
               </v-slide-group-item>
             </v-slide-group>
-            <div>
+            <div v-if="article.date">
               {{ date.format(article.date, 'normalDateWithWeekday') }}
             </div>
-            <div class="content">{{ article.excerpt }}</div>
+            <ContentRendererMarkdown class="content" :value="article.excerpt" />
           </div>
         </v-card-text>
 

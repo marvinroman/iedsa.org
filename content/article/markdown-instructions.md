@@ -1,15 +1,19 @@
 ---
+
 image: https://loremflickr.com/640/360
 priority: 100
 author: Marvin Roman
 title: Website Markdown Instructions
-published: true
 date: 2023-05-30
-excerpt: Cheatsheet for markdown syntax that can be used to update or create pages.  
 tags: ['how to', 'markdown', 'website']
 draft: false
+navigation: false
+
 ---
 
+Cheatsheet for markdown syntax that can be used to update or create pages. 
+
+<!--more-->
 
 ## Headings 
 

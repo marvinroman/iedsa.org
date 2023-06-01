@@ -1,16 +1,17 @@
 ---
+
 image: /images/svb-header.png
 priority: 100
 author: Matthew Hastings
 title: "Silicon Valley Bank: A guide to understanding the crisis"
-published: true
 date: 2023-05-01
-excerpt: Just over a month ago, Silicon Valley Bank, the 18th largest bank in the US (which most of us had never heard of), collapsed in one of the largest bank failures since 2008’s financial crisis.
 tags: ['economy', 'finance', 'crisis']
 draft: false
+navigation: false
+
 ---
 
-Just over a month ago, Silicon Valley Bank, the 18th largest bank in the US (which most of us had never heard of), collapsed in one of the largest bank failures since 2008’s financial crisis. Within a week, the federal government and federal reserve sprang into action to defend the assets of their millionaire and billionaire donors and the tech industry that props them up.
+Just over a month ago, Silicon Valley Bank, the 18th largest bank in the US (which most of us had never heard of), collapsed in one of the largest bank failures since 2008’s financial crisis. <!-- more --> Within a week, the federal government and federal reserve sprang into action to defend the assets of their millionaire and billionaire donors and the tech industry that props them up.
 
 To better understand the crisis, we curated this list of articles that demonstrate how corporate greed and lack of regulation caused this crisis, as well as the unsurprising hypocrisy of the government as it rushed at warp speed to defend the assets of its donors.
 

@@ -20,7 +20,7 @@
           <div>
             {{ date.format(statement.date, 'normalDateWithWeekday') }}
           </div>
-          <div class="content">{{ statement.excerpt }}</div>
+          <ContentRendererMarkdown :value="statement.excerpt" class="content" />
         </div>
       </v-card-text>
 

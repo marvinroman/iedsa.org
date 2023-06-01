@@ -1,38 +1,25 @@
 <template>
-  <v-container>
-    <v-row>
-      <ArticleList
-        v-for="article in priorityArticles"
-        :key="article.id"
-        :article="article"
-      />
-      <ArticleList
-        v-for="article in articles"
-        :key="article.id"
-        :article="article"
-      />
-    </v-row>
-  </v-container>
+  <NuxtLayout>
+    <v-container>
+      <v-row>
+        <ContentList path="/article">
+          <template #default="{ list }">
+            <ArticleList
+              v-for="article in list"
+              :key="article.id"
+              :article="article"
+            />
+          </template>
+          <template #not-found>
+            <p>No articles found.</p>
+          </template>
+        </ContentList>
+      </v-row>
+    </v-container>
+  </NuxtLayout>
 </template>
 
-<script setup>
-// query for all priority & active articles sort by priority first and then date both in DESC order
-const priorityArticles = await queryContent('article')
-  .where({ priority: { $gt: 0 } })
-  .where({ draft: { $not: true } })
-  .where({ published: true })
-  .sort({ priority: -1, $numeric: true })
-  .sort({ date: -1 })
-  .find()
-
-// query all non-priority articles and sort by date in DESC order
-const articles = await queryContent('article')
-  .where({ priority: { $not: { $gt: 0 } } })
-  .where({ draft: { $not: true } })
-  .where({ published: true })
-  .sort({ date: -1 })
-  .find()
-
+<script setup lang="ts">
 // pull the app config to help set page title
 const config = useAppConfig()
 

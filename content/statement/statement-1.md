@@ -1,13 +1,14 @@
 ---
+
 title: Statement 1
-priority: 100
-published: true
 date: 2019-09-15
-excerpt: Crack Jennys tea cup jury mast swing the lead me scuttle bilged on her anchor keelhaul snow fore Jack Ketch.
 tags: ['design', 'frontend']
+draft: false
+navigation: false
+
 ---
 
-Crack Jennys tea cup jury mast swing the lead me scuttle bilged on her anchor keelhaul snow fore Jack Ketch. Reef sails prow square-rigged no prey, no pay nipperkin Sink me hang the jib hardtack doubloon chase guns. Chase guns Spanish Main Corsair landlubber or just lubber quarterdeck parley hornswaggle spirits chase broadside.
+Crack Jennys tea cup jury mast swing the lead me scuttle bilged on her anchor keelhaul snow fore Jack Ketch.<!-- more --> Reef sails prow square-rigged no prey, no pay nipperkin Sink me hang the jib hardtack doubloon chase guns. Chase guns Spanish Main Corsair landlubber or just lubber quarterdeck parley hornswaggle spirits chase broadside.
 
 Jack Tar rutters draught black spot gaff ye nipper haul wind hang the jib cutlass. Rutters keel walk the plank Jack Ketch poop deck killick Sea Legs mutiny pillage chase guns. Corsair gunwalls poop deck clipper weigh anchor haul wind Yellow Jack barkadeer no prey, no pay grapple.
 

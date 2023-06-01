@@ -1,6 +1,9 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: true,
+  // nitro: {
+  //   preset: 'service-worker',
+  // },
   build: {
     transpile: ['vuetify'],
   },
@@ -27,18 +30,18 @@ export default defineNuxtConfig({
       page: true,
       surround: true,
       // Will fetch `content/_theme.yml` and put it in `globals.theme` if present.
-      globals: {
-        theme: {
-          where: {
-            _id: 'content:_theme.yml',
-          },
-          without: ['_'],
-        },
-      },
+      // globals: {
+      //   theme: {
+      //     where: {
+      //       _id: 'content:_theme.yml',
+      //     },
+      //     without: ['_'],
+      //   },
+      // },
       // Will use `theme` global to search for a fallback `layout` key.
-      layoutFallbacks: ['theme'],
+      // layoutFallbacks: ['theme'],
       // Will inject `[...slug].vue` as the root page.
-      injectPage: false,
+      injectPage: true,
     },
   },
 

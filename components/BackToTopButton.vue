@@ -4,7 +4,7 @@
     icon
     size="x-large"
     class="back-to-top gradient-border"
-    color="primary"
+    elevation="0"
     @click="toTop"
   >
     <v-icon size="x-large">mdi-chevron-up</v-icon>

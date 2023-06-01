@@ -2,9 +2,13 @@
   <v-app id="inspire" v-resize="resize">
     <AppHeader :title="title" :menu="config.menu" />
     <v-main app>
-      <slot />
-
-      <BackToTopButton />
+      <v-container
+        :fluid="Boolean(fluid)"
+        :class="Boolean(fluid) ? 'pa-0 ma-0' : ''"
+      >
+        <slot />
+        <BackToTopButton />
+      </v-container>
     </v-main>
     <AppFooter :title="title" :socials="config.socials" />
   </v-app>
@@ -14,6 +18,12 @@
 import { useDisplay } from 'vuetify'
 
 export default {
+  props: {
+    fluid: {
+      type: [String, Boolean],
+      default: false,
+    },
+  },
   setup() {
     const config = useAppConfig()
     const { lgAndUp, xlAndUp } = useDisplay()

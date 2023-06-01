@@ -6,8 +6,6 @@ title: Dues & Donations
 
 # Dues and Donations
 
-:vuetify-divider{.my-6}
-
 ::vuetify-row
 
 :::vuetify-col{.column-2}
