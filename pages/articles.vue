@@ -1,22 +1,20 @@
 <template>
-  <NuxtLayout>
-    <v-container>
-      <v-row>
-        <ContentList path="/article">
-          <template #default="{ list }">
-            <ArticleList
-              v-for="article in list"
-              :key="article.id"
-              :article="article"
-            />
-          </template>
-          <template #not-found>
-            <p>No articles found.</p>
-          </template>
-        </ContentList>
-      </v-row>
-    </v-container>
-  </NuxtLayout>
+  <v-container>
+    <v-row>
+      <ContentList path="/article">
+        <template #default="{ list }">
+          <ArticleList
+            v-for="article in list"
+            :key="article.id"
+            :article="article"
+          />
+        </template>
+        <template #not-found>
+          <p>No articles found.</p>
+        </template>
+      </ContentList>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup lang="ts">

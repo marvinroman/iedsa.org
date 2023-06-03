@@ -168,6 +168,8 @@ html {
 
   .table-of-contents {
     border: 1px solid rgba(var(--v-theme-on-background), var(--v-border-opacity));
+    display: block;
+    width: 100%;
     // margin-top: 12px;
 
     // max-width: 25%;
@@ -175,7 +177,7 @@ html {
 
     ul {
       list-style: none;
-      padding-left: 0;
+      padding-left: 1rem;
       margin-top: 0;
       margin-bottom: 0;
     }

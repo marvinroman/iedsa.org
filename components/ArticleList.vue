@@ -17,9 +17,8 @@
               <NuxtLink
                 :to="article._path"
                 class="text-white text-decoration-none"
+                >Read More</NuxtLink
               >
-                Read More
-              </NuxtLink>
             </div>
           </v-expand-transition>
         </v-img>
@@ -49,7 +48,12 @@
             <div v-if="article.date">
               {{ date.format(article.date, 'normalDateWithWeekday') }}
             </div>
-            <ContentRendererMarkdown class="content" :value="article.excerpt" />
+            <ContentRenderer :value="article.excerpt">
+              <ContentRendererMarkdown
+                class="content"
+                :value="article.excerpt"
+              />
+            </ContentRenderer>
           </div>
         </v-card-text>
 
@@ -58,9 +62,8 @@
           <NuxtLink
             :to="article._path"
             class="v-btn text-info v-btn--density-default v-btn--size-default v-btn--variant-text"
+            >Read More</NuxtLink
           >
-            Read More
-          </NuxtLink>
         </v-card-actions>
       </v-card>
     </v-hover>

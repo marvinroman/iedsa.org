@@ -9,16 +9,16 @@
 <script setup>
 defineProps({
   inset: {
-    type: String,
-    default: undefined,
+    type: [String, Boolean],
+    default: false,
   },
   thickness: {
     type: [String, Number],
     default: '1px',
   },
   vertical: {
-    type: String,
-    default: undefined,
+    type: [String, Boolean],
+    default: false,
   },
 })
 </script>

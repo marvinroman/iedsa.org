@@ -86,7 +86,6 @@
           </div>
         </v-card-text>
       </v-card>
-      <h1></h1>
     </v-container>
   </v-container>
 </template>

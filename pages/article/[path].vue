@@ -1,6 +1,6 @@
 <template>
-  <NuxtLayout>
-    <ContentDoc v-slot="{ doc }">
+  <ContentDoc v-slot="{ doc }">
+    <v-container>
       <v-container class="v-window__container mt-0 pt-0">
         <v-parallax
           v-if="doc.image"
@@ -76,7 +76,7 @@
       </v-sheet>
 
       <v-row no-gutters>
-        <v-col cols="9">
+        <v-col cols="12" md="9">
           <v-sheet class="post-body">
             <ContentRenderer :value="doc" class="bg-grey-lighten-3 py-8 px-4" />
           </v-sheet>
@@ -107,8 +107,8 @@
           </v-sheet>
         </v-col>
       </v-row>
-    </ContentDoc>
-  </NuxtLayout>
+    </v-container>
+  </ContentDoc>
 </template>
 
 <script setup lang="ts">

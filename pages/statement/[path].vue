@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout>
+  <ContentDoc v-slot="{ doc }">
     <v-container class="mt-0 pt-0 mx-auto">
       <v-container class="v-window__container mt-2">
         <div class="v-window__controls">
@@ -30,18 +30,13 @@
       <v-card class="ma-0 pa-0" flat>
         <v-card-title class="mt-4">
           <h1>
-            {{ statement.title }}
+            {{ doc.title }}
           </h1>
         </v-card-title>
 
         <v-card-text>
           <div class="tags-container my-4">
-            <v-chip
-              v-for="tag in statement.tags"
-              :key="tag.id"
-              outlined
-              class="mr-2"
-            >
+            <v-chip v-for="tag in doc.tags" :key="tag.id" outlined class="mr-2">
               <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
                 <v-icon class="ml-2" color="secondary" small> mdi-tag </v-icon>
                 {{ tag }}
@@ -50,25 +45,31 @@
           </div>
 
           <div class="px-xs-5 my-1">
-            Date: {{ date.format(statement.date, 'fullDateWithWeekday') }}
+            Date: {{ date.format(doc.date, 'fullDateWithWeekday') }}
           </div>
         </v-card-text>
       </v-card>
       <v-sheet class="pa-8 bg-grey-lighten-5 post-body">
-        <ContentRenderer :value="statement" />
+        <ContentRenderer :value="doc" />
       </v-sheet>
     </v-container>
-  </NuxtLayout>
+  </ContentDoc>
 </template>
 
 <script setup>
 // Using the `useDate` function to create a `date` reactive reference
 import { useDate } from 'vuetify/labs/date'
 const date = useDate()
+const { path } = useRoute()
 
-const { page, next, prev } = useContent()
-useContentHead(page)
-const statement = page
+const [prev, next] = await queryContent('statement')
+  .only(['_path', 'title'])
+  .sort({ date: -1 })
+  .where({ draft: false })
+  .findSurround(path.replace(/\/$/, ''))
+// const { next, prev } = useContent()
+// useContentHead(page)
+// const statement = page
 
 // import { useDate } from 'vuetify/labs/date'
 

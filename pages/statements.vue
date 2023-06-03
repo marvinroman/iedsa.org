@@ -1,17 +1,15 @@
 <template>
-  <NuxtLayout>
-    <v-container>
-      <v-row>
-        <ContentList v-slot="{ list }" path="/statement">
-          <StatementList
-            v-for="statement in list"
-            :key="statement.id"
-            :statement="statement"
-          />
-        </ContentList>
-      </v-row>
-    </v-container>
-  </NuxtLayout>
+  <v-container>
+    <v-row>
+      <ContentList v-slot="{ list }" path="/statement">
+        <StatementList
+          v-for="statement in list"
+          :key="statement.id"
+          :statement="statement"
+        />
+      </ContentList>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup>
