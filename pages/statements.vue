@@ -1,18 +1,30 @@
 <template>
   <v-container>
     <v-row>
-      <ContentList v-slot="{ list }" path="/statement">
-        <StatementList
-          v-for="statement in list"
-          :key="statement.id"
-          :statement="statement"
-        />
+      <ContentList :query="query">
+        <template #default="{ list }">
+          <StatementList
+            v-for="statement in list"
+            :key="statement.id"
+            :statement="statement"
+          />
+        </template>
+        <template #not-found>
+          <p>No articles found.</p>
+        </template>
       </ContentList>
     </v-row>
   </v-container>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+const query: QueryBuilderParams = {
+  path: '/statement',
+  where: [{ draft: { $not: true } }],
+  sort: [{ date: -1 }],
+}
+
 // pull the app config to help set page title
 const config = useAppConfig()
 

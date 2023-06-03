@@ -3,7 +3,7 @@
 title: Statement 1
 date: 2019-09-15
 tags: ['design', 'frontend']
-draft: false
+draft: true
 navigation: false
 
 ---

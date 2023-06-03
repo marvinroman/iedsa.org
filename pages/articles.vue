@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <ContentList path="/article">
+      <ContentList :query="query">
         <template #default="{ list }">
           <ArticleList
             v-for="article in list"
@@ -18,6 +18,13 @@
 </template>
 
 <script setup lang="ts">
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+const query: QueryBuilderParams = {
+  path: '/article',
+  where: [{ draft: { $not: true } }],
+  sort: [{ date: -1 }],
+}
+
 // pull the app config to help set page title
 const config = useAppConfig()
 
