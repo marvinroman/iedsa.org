@@ -482,3 +482,85 @@ Hyphen seperated props like `fixed-footer` will become `fixedFooter`.
 | Header | Title |
 | Paragraph | Text | 
 ::
+
+### Cards
+
+For full reference of props available in the cards API see [documentation](https://vuetifyjs.com/en/api/v-card/). 
+
+Hyphen seperated props like `append-avatar` will become `appendAvatar`.  
+
+```markdown
+::vuetify-card{theme="dark"}
+
+Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Pretium fusce id velit ut tortor pretium viverra suspendisse. Nibh tortor id aliquet lectus proin. Porttitor eget dolor morbi non arcu. Sit amet purus gravida quis blandit turpis cursus. Orci dapibus ultrices in iaculis nunc. Aenean pharetra magna ac placerat vestibulum.
+
+#title
+Test title
+
+#subtitle
+Test subtitle
+
+#actions
+  :vuetify-spacer
+::vuetify-btn{color="success" appendIcon="mdi-arrow-collapse-down"}
+Submit
+::
+
+::
+```
+
+
+::vuetify-card{theme="dark"}
+
+Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Pretium fusce id velit ut tortor pretium viverra suspendisse. Nibh tortor id aliquet lectus proin. Porttitor eget dolor morbi non arcu. Sit amet purus gravida quis blandit turpis cursus. Orci dapibus ultrices in iaculis nunc. Aenean pharetra magna ac placerat vestibulum.
+
+#title
+Test title
+
+#subtitle
+Test subtitle
+
+#actions
+  :vuetify-spacer
+::vuetify-btn{color="success" appendIcon="mdi-arrow-collapse-down"}
+Submit
+::
+
+::
+
+### Expansion Panel
+
+For full reference of props available in the expansion panels API see [documentation](https://vuetifyjs.com/en/api/v-expansion-panels/). 
+
+For full reference of props available in the expansion panel API see [documentation](https://vuetifyjs.com/en/api/v-expansion-panel/). 
+
+Hyphen seperated props like `append-avatar` will become `appendAvatar`.  
+
+
+```markdown
+::vuetify-expansion-panels
+
+:::vuetify-expansion-panel
+Nibh tortor id aliquet lectus proin. Porttitor eget dolor morbi non arcu.
+
+#title
+Nibh tortor
+:::
+:::vuetify-expansion-panel{title="Orci dapibus" color="grey"}
+Orci dapibus ultrices in iaculis nunc. Aenean pharetra magna ac placerat vestibulum.
+:::
+::
+```
+
+::vuetify-expansion-panels
+
+:::vuetify-expansion-panel
+Nibh tortor id aliquet lectus proin. Porttitor eget dolor morbi non arcu.
+
+#title
+Nibh tortor
+:::
+:::vuetify-expansion-panel{title="Orci dapibus" color="grey"}
+Orci dapibus ultrices in iaculis nunc. Aenean pharetra magna ac placerat vestibulum.
+:::
+::
