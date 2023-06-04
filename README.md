@@ -1,6 +1,6 @@
 # Inland Empire DSA Website
 
-![Deploy Status Badge](https://github.com/marvinroman/iedsa.org/actions/workflows/deploy.yml/badge.svg)
+![Deploy Status Badge](https://github.com/marvinroman/iedsa.org/actions/workflows/nuxtjs.yml/badge.svg)
 
 The website is deployed on Github Pages infrastructure using this repository.
 
