@@ -1,7 +1,6 @@
 ---
 
 image: /images/svb-header.png
-priority: 100
 author: Matthew Hastings
 title: "Silicon Valley Bank: A guide to understanding the crisis"
 date: 2023-05-01

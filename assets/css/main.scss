@@ -256,3 +256,14 @@ html {
   bottom: 6rem;
   right: 2rem;
 }
+
+.full-height {
+  height: calc(100vh - 190px);
+}
+
+.full-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

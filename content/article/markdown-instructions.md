@@ -1,12 +1,11 @@
 ---
 
 image: https://loremflickr.com/640/360
-priority: 100
 author: Marvin Roman
 title: Website Markdown Instructions
 date: 2023-05-30
 tags: ['how to', 'markdown', 'website']
-draft: false
+draft: true
 navigation: false
 
 ---
