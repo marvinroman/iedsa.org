@@ -27,28 +27,22 @@
           <div v-else></div>
         </div>
       </v-container>
-      <v-card class="ma-0 pa-0" flat>
-        <v-card-title class="mt-4">
-          <h1>
-            {{ doc.title }}
-          </h1>
-        </v-card-title>
+      <v-sheet>
+        <h1 class="mt-4">{{ doc.title }}</h1>
 
-        <v-card-text>
-          <div class="tags-container my-4">
-            <v-chip v-for="tag in doc.tags" :key="tag.id" outlined class="mr-2">
-              <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
-                <v-icon class="ml-2" color="secondary" small> mdi-tag </v-icon>
-                {{ tag }}
-              </NuxtLink>
-            </v-chip>
-          </div>
+        <div class="tags-container my-4">
+          <v-chip v-for="tag in doc.tags" :key="tag.id" outlined class="mr-2">
+            <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
+              <v-icon class="ml-2" color="secondary" small> mdi-tag </v-icon>
+              {{ tag }}
+            </NuxtLink>
+          </v-chip>
+        </div>
 
-          <div class="px-xs-5 my-1">
-            Date: {{ date.format(doc.date, 'fullDateWithWeekday') }}
-          </div>
-        </v-card-text>
-      </v-card>
+        <div class="px-xs-5 my-1">
+          Date: {{ date.format(doc.date, 'fullDateWithWeekday') }}
+        </div>
+      </v-sheet>
       <v-sheet class="pa-8 bg-grey-lighten-5 post-body">
         <ContentRenderer :value="doc" />
       </v-sheet>

@@ -1,10 +1,9 @@
 ---
 
-image: https://loremflickr.com/640/360
 author: Marvin Roman
 title: Website Markdown Instructions
 date: 2023-05-30
-tags: ['how to', 'markdown', 'website']
+tags: ['Markdown', 'Website']
 draft: true
 navigation: false
 

@@ -29,45 +29,26 @@
         </div>
       </v-container>
       <v-sheet>
-        <v-card class="ma-0 pa-0" flat>
-          <v-card-title class="mt-4">
-            <h1>
-              {{ doc.title }}
-            </h1>
-          </v-card-title>
+        <h1 class="mt-4">{{ doc.title }}</h1>
+        <div class="mt-2">
+          By:
+          <NuxtLink :to="'/author/' + doc.author" class="text-decoration-none">
+            {{ doc.author }}
+          </NuxtLink>
+        </div>
 
-          <v-card-subtitle class="mt-2">
-            By:
-            <NuxtLink
-              :to="'/author/' + doc.author"
-              class="text-decoration-none"
-            >
-              {{ doc.author }}
+        <div class="tags-container my-4">
+          <v-chip v-for="tag in doc.tags" :key="tag.id" outlined class="mr-2">
+            <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
+              <v-icon class="ml-2" color="secondary" small> mdi-tag </v-icon>
+              {{ tag }}
             </NuxtLink>
-          </v-card-subtitle>
+          </v-chip>
+        </div>
 
-          <v-card-text>
-            <div class="tags-container my-4">
-              <v-chip
-                v-for="tag in doc.tags"
-                :key="tag.id"
-                outlined
-                class="mr-2"
-              >
-                <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
-                  <v-icon class="ml-2" color="secondary" small>
-                    mdi-tag
-                  </v-icon>
-                  {{ tag }}
-                </NuxtLink>
-              </v-chip>
-            </div>
-
-            <div class="px-xs-5 my-1">
-              Date: {{ date.format(doc.date, 'fullDateWithWeekday') }}
-            </div>
-          </v-card-text>
-        </v-card>
+        <div class="px-xs-5 my-1">
+          Date: {{ date.format(doc.date, 'fullDateWithWeekday') }}
+        </div>
       </v-sheet>
 
       <v-row no-gutters>
