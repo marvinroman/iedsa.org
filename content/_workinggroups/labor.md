@@ -1,6 +1,6 @@
 ---
 title: Labor
-icon: mdi-hammer-sickle
+icon: mdi-account-hard-hat-outline
 icon_color: red-darken-4
 ---
 
