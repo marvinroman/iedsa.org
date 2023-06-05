@@ -4,7 +4,7 @@ image: /images/ups-contract-fight-2023.webp
 author: Elton
 title: "UPS Labor Strikes in 2023: Battling for Workers' Rights!"
 date: 2023-05-30
-tags: ['UPS', 'Teamsters', 'Labor Rights']
+tags: ['UPS', 'Teamsters', 'Labor Rights', 'Unions']
 draft: false
 navigation: false
 

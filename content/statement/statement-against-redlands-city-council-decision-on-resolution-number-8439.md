@@ -8,7 +8,7 @@ navigation: false
 
 ---
 
-On May 2, Redlands City Council voted against Resolution Number 8439 (Res. No.8439) which authorizes flying the Rainbow Pride Flag at Redland’s City Hall during the month of June. Despite the precedent of allowing the flag to fly over Redland’s City Hall for the past two years and the overwhelming show of pro-resolution support from the Redlands community, Mayor Eddie Tejeda and Councilmembers Mario Saucedo and Paul Barich knowingly ignored their constituents and voted against Res No. 8439.
+On May 2, Redlands City Council voted against Resolution Number 8439 (Res. No.8439) which authorizes flying the Rainbow Pride Flag at Redland’s City Hall during the month of June.<!-- more --> Despite the precedent of allowing the flag to fly over Redland’s City Hall for the past two years and the overwhelming show of pro-resolution support from the Redlands community, Mayor Eddie Tejeda and Councilmembers Mario Saucedo and Paul Barich knowingly ignored their constituents and voted against Res No. 8439.
 
 The only support came from Councilmembers Jenna Guzman-Lowry and Denise Davis. They heard the words from those who spoke that night about the harassment that members of the LGBTQIAP2+ (LGBT+) community have faced. They listened as their constituents told them what the Rainbow Pride Flag represents to them. And, in solidarity with their community, Guzman-Lowry and Davis debunked legal and slippery slope fallacies presented by opponents of Res. No. 8439.
 

@@ -8,7 +8,7 @@ navigation: false
 
 ---
 
-On February 25, a proclaimed “Day of Hate” by white nationalist organizations, anonymous bigots wrote “Holocaust 2023” across the overpass near the Alabama Street exit on the 10 freeway in Redlands, California. Thankfully, local organizers from the anti-fascist group Safe Redlands Schools quickly covered the graffiti at their own personal risk.
+On February 25, a proclaimed “Day of Hate” by white nationalist organizations, anonymous bigots wrote “Holocaust 2023” across the overpass near the Alabama Street exit on the 10 freeway in Redlands, California.<!-- more --> Thankfully, local organizers from the anti-fascist group Safe Redlands Schools quickly covered the graffiti at their own personal risk.
 
 This incident is only a pebble in the larger pail of recent fascist activity by chauvinist organizations. They are showing up at school board meetings and city council meetings, and leaving hateful propaganda on public and private property. Therefore, we, the members of Inland Empire DSA (IEDSA), overwhelmingly condemn the overpass incident as well as all other fascist activity taking place in our community. We call on our members to get involved in uniting the Inland Empire communities against fascism, to work towards a society that values the rights and dignity of all individuals, and to provide education on modern fascist organizations to better recognize their names and symbols. The repeated attempts of these bigoted groups to infiltrate our communities are failing, but are not over.
 

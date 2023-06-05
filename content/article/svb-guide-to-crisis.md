@@ -4,7 +4,7 @@ image: /images/svb-header.png
 author: Matthew Hastings
 title: "Silicon Valley Bank: A guide to understanding the crisis"
 date: 2023-05-01
-tags: ['economy', 'finance', 'crisis']
+tags: ['Economic Crisis', 'Banking', 'Finance']
 draft: false
 navigation: false
 
@@ -23,3 +23,5 @@ To better understand the crisis, we curated this list of articles that demonstra
 [What the End of SVB Reveals About VC Class Solidarity](https://www.thenation.com/article/economy/svb-bank-interest-rates/) - The Nation
 
 [Silicon Valley Learns to Love Socialism for the Rich](https://www.thenation.com/article/economy/svb-failure-socialism-rich/tnamp/) - The Nation
+
+** Article originally posted to California DSA [https://www.californiadsa.org/news/svb-crisis-guide](https://www.californiadsa.org/news/svb-crisis-guide)

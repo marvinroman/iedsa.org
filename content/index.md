@@ -30,7 +30,9 @@ Members of Inland Empire DSA (IE DSA) strive for collective liberation and econo
 
 :::vuetify-col{.column-2}
 
-  :vuetify-img{src="https://via.placeholder.com/640x360"}
+### Upcoming Events
+
+  :events-list
 
 :::
 ::

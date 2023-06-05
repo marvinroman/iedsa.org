@@ -33,7 +33,7 @@
               <v-list-item v-if="item.path" :prepend-icon="item.icon">
                 <NuxtLink
                   :to="item.path"
-                  class="text-decoration-none text-grey-darken-2"
+                  class="text-decoration-none text-grey-darken-6"
                 >
                   {{ item.name }}
                 </NuxtLink>
@@ -50,7 +50,7 @@
             <v-list-item-title>
               <NuxtLink
                 :to="nav.path"
-                class="text-decoration-none text-grey-darken-2"
+                class="text-decoration-none text-grey-darken-6"
               >
                 {{ nav.name }}
               </NuxtLink>
@@ -114,7 +114,7 @@
                 <v-list-item-title>
                   <NuxtLink
                     :to="item.path"
-                    class="text-decoration-none text-grey-darken-2"
+                    class="text-decoration-none text-grey-darken-6"
                   >
                     {{ item.name }}
                   </NuxtLink>
