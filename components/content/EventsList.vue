@@ -1,11 +1,16 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <v-container>
-    <v-carousel cycle height="220" hide-delimiters show-arrows="hover">
+    <v-carousel
+      cycle
+      :height="smAndDown ? 300 : 220"
+      hide-delimiters
+      show-arrows="hover"
+    >
       <v-carousel-item v-for="(event, i) in events" :key="i">
         <v-sheet height="100%" color="grey-lighten-2" class="pt-2 pl-2 pb-2">
           <v-row>
-            <v-col cols="9">
+            <v-col cols="12" md="9">
               <h3>{{ event.name }}</h3>
               <div>{{ date.format(event.start, 'fullDateWithWeekday') }}</div>
               <div class="event-description" v-html="event.description"></div>
@@ -31,9 +36,12 @@
 <script setup>
 // Using the `useDate` function to create a `date` reactive reference
 import { useDate } from 'vuetify/labs/date'
+import { useDisplay } from 'vuetify'
 
 const date = useDate()
 const config = useAppConfig()
+const { smAndDown } = useDisplay()
+
 const data = await $fetch(config.events_feed, {
   method: 'GET',
 })

@@ -2,19 +2,14 @@
   <ContentDoc v-slot="{ doc }">
     <v-container>
       <v-container class="v-window__container mt-0 pt-0">
-        <v-parallax
-          v-if="doc.image"
-          :src="doc.image"
-          height="600"
-          cover
-        ></v-parallax>
+        <v-img v-if="doc.image" :src="doc.image" height="600"></v-img>
         <div class="v-window__controls">
           <NuxtLink
             v-if="prev"
             :to="prev._path"
             class="prev-btn v-btn v-btn--flat v-btn--icon v-theme--light v-btn--density-default v-btn--size-x-larg v-btn--variant-elevated mx-4 gradient-border"
           >
-            <v-tooltip activator="parent" location="end">
+            <v-tooltip activator="parent" location="end" color="primary">
               {{ prev.title }}
             </v-tooltip>
             <v-icon size="x-large">mdi-chevron-left</v-icon>
