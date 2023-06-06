@@ -51,7 +51,7 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/article/markdown-instructions',
-        'article/marxist-analysis-of-unemployment-and-welfare',
+        '/article/marxist-analysis-of-unemployment-and-welfare',
       ],
     },
   },
