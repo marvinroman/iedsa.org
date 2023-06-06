@@ -49,7 +49,10 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/article/markdown-instructions'],
+      routes: [
+        '/article/markdown-instructions',
+        'article/marxist-analysis-of-unemployment-and-welfare',
+      ],
     },
   },
 
