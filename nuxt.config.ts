@@ -51,8 +51,10 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/article/markdown-instructions',
+        '/article/',
         '/article/the-sweat-of-ones-brow-exploring-socialisms-stance-against-exploitation',
         '/article/the-contradiction-within-capitalism-unemployment-the-reserve-army-of-labor-and-the-path-to-full-employment-in-socialism',
+        '/statement/',
       ],
     },
   },
