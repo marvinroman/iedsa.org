@@ -40,8 +40,9 @@ Under socialism, full employment becomes a viable possibility by mitigating the 
 
 The contradiction within capitalism that creates unemployment necessitates the existence of welfare programs. However, within socialism, the goal is to create a system that eliminates unemployment by mitigating market forces and addressing class antagonism[^4][^5]. Socialism offers the potential to move beyond the limitations of welfare within capitalism and foster an economic framework that guarantees meaningful work, stability, and prosperity for all. By understanding the dynamics at play, we can strive towards a future where full employment and fair labor conditions are not distant ideals, but tangible realities.
 
+*This articles was written in cooperation with AI* 
 
---- 
+:vuetify-divider{.mt-8 .mb-4}
 
 [^1]: Marx, K. (1867). Capital: Volume I.  
 [^2]: Harvey, D. (2010). The Enigma of Capital: And the Crises of Capitalism.  
