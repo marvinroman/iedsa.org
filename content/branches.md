@@ -1,9 +1,12 @@
 ---
 
-title: Branches
+title: Branches & Regions
+
+navigation: 
+  title: Branches
 
 head: 
-  title: Branches - Inland Empire DSA
+  title: Branches & Regions - Inland Empire DSA
   description: "How Inland Empired DSA organizes itself by regions."
 
 ---
@@ -17,22 +20,16 @@ Why the division? Covering such a large span of vibrant and distinct communities
 
 ### Branches
 
- IE DSA currently only has one branch, the Desert Branch and it is made of the communities of Palm Springs, Cathedral City, Palm Desert, Indian Wells, La Quinta, Indio, Coachella, Yucca Valley 
+IE DSA currently only has one branch, the Desert Branch and it is made of the communities of Palm Springs, Cathedral City, Palm Desert, Indian Wells, La Quinta, Indio, Coachella, Yucca Valley 
 :::
 
   :vuetify-divider{vertical=true .d-none .d-md-flex}
 
 :::vuetify-col{.column-2}
 
-::vuetify-img
----
-src: "/images/area-map.jpg"
-contain: "true"
----
-::
+  :vuetify-img{src="/images/area-map.jpg" contain=true}
 
 :::
-
 ::
 
 :vuetify-divider{.my-8}
@@ -42,6 +39,5 @@ contain: "true"
 We have six regions.
 
 :branches-list{.my-8}
-
 
 Don't see your city? Let us know by emailing us at inlanddsa@gmail.com. No one should feel like they need to be exclusive to one region. Visit neighboring regions or branches and find out which one suits you.

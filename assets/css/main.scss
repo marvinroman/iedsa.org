@@ -168,6 +168,8 @@ html {
 
   .table-of-contents {
     border: 1px solid rgba(var(--v-theme-on-background), var(--v-border-opacity));
+    display: block;
+    width: 100%;
     // margin-top: 12px;
 
     // max-width: 25%;
@@ -175,7 +177,7 @@ html {
 
     ul {
       list-style: none;
-      padding-left: 0;
+      padding-left: 1rem;
       margin-top: 0;
       margin-bottom: 0;
     }
@@ -253,4 +255,24 @@ html {
   position: fixed;
   bottom: 6rem;
   right: 2rem;
+}
+
+.full-height {
+  height: calc(100vh - 190px);
+}
+
+.full-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.event-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  white-space: normal;
 }

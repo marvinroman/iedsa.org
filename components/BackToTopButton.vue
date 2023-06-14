@@ -1,13 +1,13 @@
 <template>
   <v-btn
     v-show="yScrolled > 800"
-    icon
+    icon="mdi-chevron-up"
     size="x-large"
     class="back-to-top gradient-border"
-    color="primary"
+    flat
+    border
     @click="toTop"
   >
-    <v-icon size="x-large">mdi-chevron-up</v-icon>
   </v-btn>
 </template>
 

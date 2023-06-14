@@ -34,7 +34,6 @@ const {
 const authorsQuery = await queryContent()
   .only(['author'])
   .where({ draft: { $not: true } })
-  .where({ published: true })
   .find()
 // sort and return unique authors
 const mappedAuthors = authorsQuery
@@ -47,7 +46,6 @@ const allAuthors = [...uniqueAuthors].sort()
 const articles = await queryContent('article')
   .where({ author: name })
   .where({ draft: { $not: true } })
-  .where({ published: true })
   .sort({ date: -1 })
   .find()
 

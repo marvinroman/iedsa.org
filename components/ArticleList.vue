@@ -17,9 +17,8 @@
               <NuxtLink
                 :to="article._path"
                 class="text-white text-decoration-none"
+                >Read More</NuxtLink
               >
-                Read More
-              </NuxtLink>
             </div>
           </v-expand-transition>
         </v-img>
@@ -46,10 +45,15 @@
                 </NuxtLink>
               </v-slide-group-item>
             </v-slide-group>
-            <div>
+            <div v-if="article.date">
               {{ date.format(article.date, 'normalDateWithWeekday') }}
             </div>
-            <div class="content">{{ article.excerpt }}</div>
+            <ContentRenderer :value="article.excerpt">
+              <ContentRendererMarkdown
+                class="content"
+                :value="article.excerpt"
+              />
+            </ContentRenderer>
           </div>
         </v-card-text>
 
@@ -58,9 +62,8 @@
           <NuxtLink
             :to="article._path"
             class="v-btn text-info v-btn--density-default v-btn--size-default v-btn--variant-text"
+            >Read More</NuxtLink
           >
-            Read More
-          </NuxtLink>
         </v-card-actions>
       </v-card>
     </v-hover>

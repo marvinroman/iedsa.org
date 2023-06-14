@@ -3,7 +3,6 @@
     <AppHeader :title="title" :menu="config.menu" />
     <v-main app>
       <slot />
-
       <BackToTopButton />
     </v-main>
     <AppFooter :title="title" :socials="config.socials" />

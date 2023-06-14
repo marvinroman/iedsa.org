@@ -2,6 +2,8 @@ export default defineAppConfig({
   long_title: 'Inland Empire Democratic Socialists of America',
   medium_title: 'Inland Empire Democratic Socialists',
   short_title: 'Inland Empire DSA',
+  events_feed:
+    'https://inland-empire-dsa.gitlab.io/action-network-fetch/events.json',
   socials: [
     {
       link: 'https://www.facebook.com/InlandEmpireDSA',

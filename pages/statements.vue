@@ -1,37 +1,29 @@
 <template>
   <v-container>
     <v-row>
-      <StatementList
-        v-for="statement in priorityStatements"
-        :key="statement.id"
-        :statement="statement"
-      />
-      <StatementList
-        v-for="statement in statements"
-        :key="statement.id"
-        :statement="statement"
-      />
+      <ContentList :query="query">
+        <template #default="{ list }">
+          <StatementList
+            v-for="statement in list"
+            :key="statement.id"
+            :statement="statement"
+          />
+        </template>
+        <template #not-found>
+          <p>No articles found.</p>
+        </template>
+      </ContentList>
     </v-row>
   </v-container>
 </template>
 
-<script setup>
-// query for all priority & active statements sort by priority first and then date both in DESC order
-const priorityStatements = await queryContent('statement')
-  .where({ priority: { $gt: 0 } })
-  .where({ draft: { $not: true } })
-  .where({ published: true })
-  .sort({ priority: 1, $numeric: true })
-  .sort({ date: -1 })
-  .find()
-
-// query all non-priority statements and sort by date in DESC order
-const statements = await queryContent('statement')
-  .where({ priority: { $not: { $gt: 0 } } })
-  .where({ draft: { $not: true } })
-  .where({ published: true })
-  .sort({ date: -1 })
-  .find()
+<script setup lang="ts">
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+const query: QueryBuilderParams = {
+  path: '/statement',
+  where: [{ draft: { $not: true } }],
+  sort: [{ date: -1 }],
+}
 
 // pull the app config to help set page title
 const config = useAppConfig()
