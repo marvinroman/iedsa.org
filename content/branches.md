@@ -32,11 +32,9 @@ IE DSA currently only has one branch, the Desert Branch and it is made of the co
 :::
 ::
 
-:vuetify-divider{.my-8}
+:vuetify-divider{.my-4}
 
 ### Regions
-
-We have six regions.
 
 :branches-list{.my-8}
 
