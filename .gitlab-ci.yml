@@ -12,7 +12,7 @@ pages:
     - yarn install
     - yarn generate
     # Optional: this gzips all files, so GitLab can serve compressed assets.
-    - gzip -k -6 $(find .output/public -type f)
+    # - gzip -k -6 $(find .output/public -type f)
   artifacts:
     paths:
       - .output/public
