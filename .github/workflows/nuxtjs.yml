@@ -1,7 +1,7 @@
 name: Deploy Nuxt to GitHub pages
 on:  
   push:    
-    branches: [main, 'test-content-driven']
+    branches: [staging]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
