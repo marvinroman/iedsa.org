@@ -18,7 +18,7 @@ pages:
   script: 
     - rsync --del -r .output/public/ public
     # Optional: this gzips all files, so GitLab can serve compressed assets.
-    - gzip -k -6 $(find public -type f)
+    - find .output/public -type f -print0 | xargs -0r gzip -k -6
   artifacts:
     paths:
       - public
