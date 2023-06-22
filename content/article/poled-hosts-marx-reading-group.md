@@ -1,7 +1,7 @@
 ---
 
-image: /images/graphic-education-hjpope.jpg
-author: Elton
+image: /images/marx101-banner.png
+author: Daniel Elton
 title: PolEd Hosts Marx Reading Group
 date: 2023-05-30
 tags: ['Political Education Working Group', 'Marx', 'Reading Group']

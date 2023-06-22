@@ -16,9 +16,9 @@ title: Dues & Donations
 
 :::vuetify-col{.column-2}
 
-Help Inland Empire DSA build socialism locally! IE DSA is the local chapter of The Democratic Socialists of America, the largest socialist organization in the United States. We believe that working people should run both the economy and society democratically to meet human needs, not to make profits for a few. We are a political and activist organization, not a party; through campus and community-based chapters, DSA members use a variety of tactics, from legislative to direct action, to fight for reforms that empower working people.
+Help IE DSA build socialism locally! We are a political and activist organization that believes that working people should run both the economy and society democratically to meet human needs, not to make profits for a few. Donations will go towards administration fees, printed promotional and educational material, and merch (just to name a few). 
 
-Inland Empire DSA is a 501c4 non-profit. Donations are not tax deductible. Our EIN is 84-3628180.
+Inland Empire DSA is a 501c4 non-profit and donations are **not** tax deductible. Our EIN is 84-3628180.
 
 :::
 ::

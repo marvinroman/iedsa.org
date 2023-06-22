@@ -1,7 +1,7 @@
 ---
 
 image: /images/rising-voices-conference-2023.jpeg
-author: Elton
+author: Daniel Elton
 title: "Rising Voices Conference (Progressive Alliance)"
 date: 2023-05-30
 tags: ['Rising Voices Conference', 'Progressive Alliance']

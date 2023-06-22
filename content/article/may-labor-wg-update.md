@@ -1,7 +1,7 @@
 ---
 
-image: /images/starbucks-union-holding-arms.jpg
-author: Elton
+image: /images/labor_wg_banner.png
+author: Daniel Elton
 title: May Labor WG Update
 date: 2023-05-30
 tags: ['Unions', 'Starbucks', 'Labor Working Group', 'Labor Rights']

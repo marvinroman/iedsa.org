@@ -8,7 +8,7 @@
       show-arrows="hover"
     >
       <v-carousel-item v-for="(event, i) in events" :key="i">
-        <v-sheet height="100%" color="grey-lighten-2" class="pt-2 pl-2 pb-2">
+        <v-sheet height="100%" color="cyan-darken-2" class="pa-3">
           <v-row>
             <v-col cols="12" md="9">
               <h3>{{ event.name }}</h3>
@@ -18,7 +18,7 @@
             <v-col style="position: relative">
               <v-btn
                 :href="`https://calendar.iedsa.org/#/event/${event.uid[0]}`"
-                class="full-centered"
+                class="full-centered py-2 px-3 bg-white text-red-darken-2"
                 target="_blank"
                 rel="noopener noreferrer"
                 color="primary"

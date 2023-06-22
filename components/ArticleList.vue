@@ -11,7 +11,7 @@
           <v-expand-transition>
             <div
               v-if="isHovering"
-              class="d-block transition-fast-in-fast-out bg-orange-darken-2 v-card--reveal text-h2 pt-14 mx-auto text-center"
+              class="d-block transition-fast-in-fast-out bg-primary v-card--reveal text-h2 pt-14 mx-auto text-center"
               style="height: 100%"
             >
               <NuxtLink
