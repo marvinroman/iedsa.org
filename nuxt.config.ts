@@ -66,4 +66,11 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+
+  webpack: {
+    extractCSS: true,
+    optimization: {
+      minimize: true,
+    },
+  },
 })
