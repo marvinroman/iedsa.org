@@ -2,6 +2,8 @@
 
 ![Deploy Status Badge](https://github.com/marvinroman/iedsa.org/actions/workflows/nuxtjs.yml/badge.svg)
 
+[![pipeline status](https://gitlab.com/inland-empire-dsa/iedsa.org/badges/main/pipeline.svg)](https://gitlab.com/inland-empire-dsa/iedsa.org/-/commits/main) 
+
 The website is deployed on Github Pages infrastructure using this repository.
 
 ## Thanks
