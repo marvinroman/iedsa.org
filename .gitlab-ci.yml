@@ -1,21 +1,27 @@
 image: node:18
 
 stages:
+  - before_script
   - build
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - apt install rsync
+  - yarn install
+  - yarn generate
 
 pages:
   stage: build
-  cache:
-    paths:
-      - node_modules/
-  script:
-    - yarn install
-    - yarn generate
+  script: 
+    - rsync --del .output/public/ public
     # Optional: this gzips all files, so GitLab can serve compressed assets.
-    # - gzip -k -6 $(find .output/public -type f)
+    # - gzip -k -6 $(find public -type f)
   artifacts:
     paths:
-      - .output/public
+      - public
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
