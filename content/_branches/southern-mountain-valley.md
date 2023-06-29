@@ -10,7 +10,6 @@ title: Southern Mountain Valley
 * Gilman Hot Springs
 * Green Acres
 * Hemet
-* Highgrove
 * Homeland
 * Lake Riverside
 * Mountain Center
