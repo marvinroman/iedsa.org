@@ -1,3 +1,5 @@
+image: node:18-alpine
+
 stages:
 - build
 - deploy
@@ -11,7 +13,6 @@ cache:
     policy: pull-push
 
 build:
-  image: node:18-alpine
   stage: build
 
   before_script:  
@@ -37,17 +38,19 @@ build:
           - "{assets,components,content,layouts,pages,plugins,public}/**/*"
 
 pages:
-  image: busybox:latest
   stage: deploy
 
   needs:
     - job: build
       artifacts: true
 
+  before_script:  
+    - apk add rsync
+
   script:
     - du -hs .output/public
     - find .output/public -type f
-    - mv .output/public public
+    - rsync --del -r .output/public/ public
     - find public -type f -print0 | xargs -0r gzip -k -6
 
   artifacts:
