@@ -562,3 +562,60 @@ Nibh tortor
 Orci dapibus ultrices in iaculis nunc. Aenean pharetra magna ac placerat vestibulum.
 :::
 ::
+
+
+### Lists
+
+For full reference of props available in the lists API see [documentation](https://vuetifyjs.com/en/api/v-list/). 
+
+For full reference of props available in the list item API see [documentation](https://vuetifyjs.com/en/api/v-list-item/). 
+
+Hyphen seperated props like `append-avatar` will become `appendAvatar`.  
+
+```markdown
+::vuetify-list
+  :::vuetify-list-item
+  Test list item
+
+  #append
+  2
+  :::
+
+  :::vuetify-list-item
+  Test list item
+
+  #prepend
+  :vuetify-icon{icon="mdi-home"}
+  :::
+
+  :::vuetify-list-item
+  Test list item
+
+  #append
+  :vuetify-icon{icon="mdi-home"}
+  :::
+::
+```
+
+::vuetify-list
+  :::vuetify-list-item
+  Test list item
+
+  #append
+  2
+  :::
+
+  :::vuetify-list-item
+  Test list item
+
+  #prepend
+  :vuetify-icon{icon="mdi-home"}
+  :::
+
+  :::vuetify-list-item
+  Test list item
+
+  #append
+  :vuetify-icon{icon="mdi-home"}
+  :::
+::
