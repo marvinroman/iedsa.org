@@ -48,7 +48,15 @@
             <div v-if="article.date">
               {{ date.format(article.date, 'normalDateWithWeekday') }}
             </div>
-            <ContentRenderer :value="article.excerpt">
+            <div
+              v-if="typeof article.excerpt === 'string'"
+              class="content"
+              v-html="article.excerpt"
+            ></div>
+            <ContentRenderer
+              v-if="typeof article.excerpt === 'object'"
+              :value="article.excerpt"
+            >
               <ContentRendererMarkdown
                 class="content"
                 :value="article.excerpt"
