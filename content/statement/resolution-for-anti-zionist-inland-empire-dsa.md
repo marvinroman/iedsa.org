@@ -51,7 +51,7 @@ Membership reinstatement will require a recommendation for reinstatement by the 
 
 Passed by the Membership of IE DSA meeting on December 17, 2023 by an OpenSlides vote.  
 
-::::vuetify-table{density="compact" hover=true .d-flex}
+::::vuetify-table{density="compact" hover=true .d-inline-flex}
 | Vote | Tally |
 | --------- | --- |
 | Number of Valid Ballots | 36 |
