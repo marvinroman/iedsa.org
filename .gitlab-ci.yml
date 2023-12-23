@@ -27,7 +27,7 @@ build:
 
   artifacts:
     paths:
-      - .output/public/
+      - .output
     when: on_success
 
   rules:
@@ -45,6 +45,8 @@ pages:
       artifacts: true
 
   script:
+    - du -hs .output/public
+    - find .output/public -type f
     - mv .output/public public
     - find public -type f -print0 | xargs -0r gzip -k -6
 
