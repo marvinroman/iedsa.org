@@ -32,7 +32,8 @@ build:
     when: on_success
 
   rules:
-    - changes:
+    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
+      changes:
         paths:
           - "{.gitlab-ci,package,app*,nuxt.config,tsconfig,yarn}.{yml,json,ts,vue,lock}"
           - "{assets,components,content,layouts,pages,plugins,public}/**/*"
