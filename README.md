@@ -1,10 +1,6 @@
 # Inland Empire DSA Website
 
-![Deploy Status Badge](https://github.com/marvinroman/iedsa.org/actions/workflows/nuxtjs.yml/badge.svg)
-
-[![pipeline status](https://gitlab.com/inland-empire-dsa/iedsa.org/badges/main/pipeline.svg)](https://gitlab.com/inland-empire-dsa/iedsa.org/-/commits/main) 
-
-The website is deployed on Github Pages infrastructure using this repository.
+The website is deployed on Gitlab Pages infrastructure using this repository.
 
 ## Thanks
 
