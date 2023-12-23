@@ -5,6 +5,7 @@ date: 2023-12-17
 tags: ['Anti-Zionist']
 draft: false
 navigation: false
+excerpt: Inland Empire DSA votes on whether to be an explicity anti-Zionist chapter.
 
 ---
 
