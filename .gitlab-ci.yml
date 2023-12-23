@@ -1,25 +1,61 @@
-image: node:18-alpine
-
 stages:
-- before_script
 - build
+- deploy
 
 cache:
-  paths:
-  - node_modules/
+  - key:
+      files:
+        - yarn.lock
+    paths:
+      - node_modules/
+    policy: pull-push
 
-before_script:
-- apk add rsync
-- yarn install
-- yarn generate
-
-pages:
+build:
+  image: node:18-alpine
   stage: build
+
+  before_script:  
+    - | 
+      if [ ! -d "node_modules" ]; then
+        echo "Cache restoration failed. Recreating cache..."
+        rm -rf node_modules/
+        yarn install
+      fi
+
   script:
-  - rsync --del -r .output/public/ public
-  - find public -type f -print0 | xargs -0r gzip -k -6
+    - yarn generate
+
   artifacts:
     paths:
-    - public
+      - .output/public/
+    when: on-success
+
   rules:
-  - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
+    - changes:
+        paths:
+          - "{.gitlab-ci,package,app*,nuxt.config,tsconfig,yarn}.{yml,json,ts,vue,lock}"
+          - "{assets,components,content,layouts,pages,plugins,public}/**/*"
+
+pages:
+  image: busybox:latest
+  stage: deploy
+
+  needs:
+    - job: build
+      artifacts: true
+
+  script:
+    - mv .output/public public
+    - find public -type f -print0 | xargs -0r gzip -k -6
+
+  artifacts:
+    paths:
+      - public
+
+  rules:
+    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
+      needs: ['build']
+      changes:
+        paths:
+          - "{.gitlab-ci,package,app*,nuxt.config,tsconfig,yarn}.{yml,json,ts,vue,lock}"
+          - "{components,assets,content,layouts,pages,plugins,public}/**/*"
