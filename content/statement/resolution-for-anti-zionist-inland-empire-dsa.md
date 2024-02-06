@@ -9,9 +9,6 @@ excerpt: Inland Empire DSA votes on whether to be an explicity anti-Zionist chap
 
 ---
 
-**Author**: Dominic I.  
-**Co-Signed**: Cait M., Tara K.,Stephanie S., derek t.b.
-
 **WHEREAS**, the Democratic Socialists of America’s (DSA) founding merger was heavily predicated on ensuring that it would uphold the Democratic Socialist Organizing Committee’s position of supporting continued American aid to the Zionist settler-colonial project of Israel[^1];
 
 **WHEREAS**,  the DSA’s historic and contemporary association with, and enablement of, Zionism has jeopardized DSA rank-and-file members’ confidence in the integrity of National DSA’s overall politics, as well as working relationships with major Palestinian-led grassroots organizations across North America;  
