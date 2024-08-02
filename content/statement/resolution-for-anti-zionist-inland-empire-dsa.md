@@ -1,7 +1,7 @@
 ---
 
 title: Resolution for an Anti-Zionist Inland Empire DSA
-date: 2023-12-17
+date: 2023-12-16
 tags: ['Anti-Zionist', 'Palestine']
 draft: false
 navigation: false
