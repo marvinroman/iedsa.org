@@ -56,7 +56,7 @@
         </v-sheet>
 
         <v-row no-gutters>
-          <v-col cols="12" md="9">
+          <v-col cols="12" :md="doc?.body?.toc?.links?.length > 0 ? 9 : 12">
             <v-sheet class="post-body">
               <ContentRenderer
                 :value="doc"
@@ -65,11 +65,7 @@
             </v-sheet>
           </v-col>
           <v-col
-            v-if="
-              doc.body.toc &&
-              doc.body.toc.links &&
-              doc.body.toc.links.length > 0
-            "
+            v-if="doc?.body?.toc?.links?.length > 0"
             cols="3"
             class="d-none d-md-flex"
           >
