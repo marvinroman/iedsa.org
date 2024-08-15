@@ -1,7 +1,11 @@
 <template>
   <ContentDoc>
     <template #default="{ doc }">
-      <v-container>
+      <v-container
+        :fluid="false"
+        class="mt-0 pt-0 mx-auto"
+        style="max-width: 1280px"
+      >
         <v-container class="v-window__container mt-0 pt-0">
           <v-img v-if="doc.image" :src="doc.image" height="600"></v-img>
           <div class="v-window__controls">
@@ -60,7 +64,7 @@
             <v-sheet class="post-body">
               <ContentRenderer
                 :value="doc"
-                class="bg-grey-lighten-3 py-8 px-4"
+                class="bg-grey-lighten-5 py-8 px-4"
               />
             </v-sheet>
           </v-col>

@@ -1,16 +1,58 @@
-@import "./_mixins/_font-face.scss";
-@import "./_mixins/_breakpoints.scss";
+@import './_mixins/_font-face.scss';
+@import './_mixins/_breakpoints.scss';
 
-@include font-face(ManifoldDSA, "../fonts/ManifoldDSA-Light", 200, normal, eot woff2 woff);
-@include font-face(ManifoldDSA, "../fonts/ManifoldDSA-Regular", 300, normal, eot woff2 woff);
-@include font-face(ManifoldDSA, "../fonts/ManifoldDSA-Medium", 400, normal, eot woff2 woff);
-@include font-face(ManifoldDSA, "../fonts/ManifoldDSA-Bold", 500, normal, eot woff2 woff);
-@include font-face(ManifoldDSA, "../fonts/ManifoldDSA-DemiBold", 600, normal, eot woff2 woff);
-@include font-face(ManifoldDSA, "../fonts/ManifoldDSA-ExtraBold", 700, normal, eot woff2 woff);
-@include font-face(ManifoldDSA, "../fonts/ManifoldDSA-Heavy", 800, normal, eot woff2 woff);
+@include font-face(
+  ManifoldDSA,
+  '../fonts/ManifoldDSA-Light',
+  200,
+  normal,
+  eot woff2 woff
+);
+@include font-face(
+  ManifoldDSA,
+  '../fonts/ManifoldDSA-Regular',
+  300,
+  normal,
+  eot woff2 woff
+);
+@include font-face(
+  ManifoldDSA,
+  '../fonts/ManifoldDSA-Medium',
+  400,
+  normal,
+  eot woff2 woff
+);
+@include font-face(
+  ManifoldDSA,
+  '../fonts/ManifoldDSA-Bold',
+  500,
+  normal,
+  eot woff2 woff
+);
+@include font-face(
+  ManifoldDSA,
+  '../fonts/ManifoldDSA-DemiBold',
+  600,
+  normal,
+  eot woff2 woff
+);
+@include font-face(
+  ManifoldDSA,
+  '../fonts/ManifoldDSA-ExtraBold',
+  700,
+  normal,
+  eot woff2 woff
+);
+@include font-face(
+  ManifoldDSA,
+  '../fonts/ManifoldDSA-Heavy',
+  800,
+  normal,
+  eot woff2 woff
+);
 
 * {
-  font-family: "ManifoldDSA";
+  font-family: 'ManifoldDSA';
 }
 
 html {
@@ -33,16 +75,17 @@ html {
 
   .headline,
   .title {
-    font-family: "ManifoldDSA", "sans-serif" !important;
+    font-family: 'ManifoldDSA', 'sans-serif' !important;
   }
-  
+
   img {
     max-width: 100%;
     max-height: 600px;
   }
 
   blockquote {
-    border-left: 5px solid rgb(var(--v-theme-primary-lighten-4));
+    border-left: 5px solid rgb(var(--v-theme-secondary));
+    background-color: rgb(var(--v-theme-secondary-lighten-5));
     font-style: italic;
     padding: 0 1.33em;
     margin: 1.33em 0;
@@ -54,7 +97,7 @@ html {
     color: rgb(var(--v-theme-on-accent));
   }
 
-  .task-list-item input[type="checkbox"] {
+  .task-list-item input[type='checkbox'] {
     margin-right: 0.5rem;
   }
 
@@ -88,7 +131,6 @@ html {
     font-size: 1.25rem;
   }
 }
-
 
 .articles,
 .statements {
@@ -125,7 +167,6 @@ html {
 }
 
 .v-col {
-
   &.articles,
   &.branches,
   &.statements {
@@ -167,7 +208,8 @@ html {
   // }
 
   .table-of-contents {
-    border: 1px solid rgba(var(--v-theme-on-background), var(--v-border-opacity));
+    border: 1px solid
+      rgba(var(--v-theme-on-background), var(--v-border-opacity));
     display: block;
     width: 100%;
     // margin-top: 12px;
@@ -226,12 +268,20 @@ html {
   }
 
   &::before {
-    background: linear-gradient(45deg, #fff, #fff 25%, #fffdb9 50%, #f8d692 75%, #ff8e8e);
+    background: linear-gradient(
+      45deg,
+      #fff,
+      #fff 25%,
+      #fffdb9 50%,
+      #f8d692 75%,
+      #ff8e8e
+    );
     background-size: 400% auto;
     bottom: 0;
-    content: "";
+    content: '';
     left: 0;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -248,7 +298,7 @@ html {
 .next-btn,
 .prev-btn {
   font-size: 1.5rem;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .back-to-top {
