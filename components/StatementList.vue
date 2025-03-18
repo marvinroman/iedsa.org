@@ -20,7 +20,16 @@
           <div>
             {{ date.format(statement.date, 'normalDateWithWeekday') }}
           </div>
-          <ContentRendererMarkdown :value="statement.excerpt" class="content" />
+          <div
+            v-if="typeof statement.excerpt === 'string'"
+            class="content"
+            v-html="statement.excerpt"
+          ></div>
+          <ContentRendererMarkdown
+            v-if="typeof statement.excerpt === 'object'"
+            :value="statement.excerpt"
+            class="content"
+          />
         </div>
       </v-card-text>
 
