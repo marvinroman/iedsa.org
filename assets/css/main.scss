@@ -59,6 +59,18 @@ html {
   font-size: 20px;
 }
 
+h2,
+h3,
+h4 {
+  > a {
+    text-decoration: none !important;
+    color: rgba(
+      var(--v-theme-on-background),
+      var(--v-high-emphasis-opacity)
+    ) !important;
+  }
+}
+
 .v-application {
   p {
     margin-bottom: 16px;

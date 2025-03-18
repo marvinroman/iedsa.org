@@ -1,7 +1,7 @@
 ---
 title: Political Education
 icon: mdi-cast-education
-icon_color: teal-darken-4
+icon_color: teal-darken-1
 ---
 
 
