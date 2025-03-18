@@ -38,7 +38,11 @@ build:
 release:
   stage: release
   image: node:alpine
+  variables:
+    NPM_TOKEN: ${GITLAB_TOKEN}
+    GIT_COMMITTER_EMAIL: ${GIT_AUTHOR_EMAIL}
   before_script:
+    - apk add --no-cache git
     - npm i -g semantic-release @semantic-release/gitlab @semantic-release/git @semantic-release/changelog conventional-changelog-conventionalcommits
   script:
     - npx semantic-release
