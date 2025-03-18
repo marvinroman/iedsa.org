@@ -1,8 +1,10 @@
 image: node:18-alpine
 
 stages:
-- build
-- deploy
+  - test
+  - build
+  - release
+  - deploy
 
 cache:
   - key:
@@ -12,56 +14,73 @@ cache:
       - node_modules/
     policy: pull-push
 
-build:
-  stage: build
-
-  before_script:  
-    - | 
+test:
+  stage: test
+  before_script:
+    - |
       if [ ! -d "node_modules" ]; then
         echo "Cache restoration failed. Recreating cache..."
         rm -rf node_modules/
         yarn install
       fi
+  script:
+    - yarn lint
+    - yarn lint:style
+    - yarn build
 
+build:
+  stage: build
+  before_script:
+    - |
+      if [ ! -d "node_modules" ]; then
+        echo "Cache restoration failed. Recreating cache..."
+        rm -rf node_modules/
+        yarn install
+      fi
   script:
     - yarn generate
-
   artifacts:
     paths:
       - .output
     when: on_success
-
   rules:
-    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
         paths:
-          - "{.gitlab-ci,package,app*,nuxt.config,tsconfig,yarn}.{yml,json,ts,vue,lock}"
-          - "{assets,components,content,layouts,pages,plugins,public}/**/*"
+          - '{.gitlab-ci,package,app*,nuxt.config,tsconfig,yarn}.{yml,json,ts,vue,lock}'
+          - '{assets,components,content,layouts,pages,plugins,public}/**/*'
+
+release:
+  stage: release
+  image: node:alpine
+  variables:
+    NPM_TOKEN: ${GITLAB_TOKEN}
+    GIT_COMMITTER_EMAIL: ${GIT_AUTHOR_EMAIL}
+  before_script:
+    - apk add --no-cache git
+    - npm i -g semantic-release @semantic-release/gitlab @semantic-release/git @semantic-release/changelog conventional-changelog-conventionalcommits
+  script:
+    - npx semantic-release
 
 pages:
   stage: deploy
-
   needs:
     - job: build
       artifacts: true
-
-  before_script:  
+  before_script:
     - apk add rsync
-
   script:
     - du -hs .output/public
     - find .output/public -type f
     - rsync --del -r .output/public/ public
     - find public -type f -print0 | xargs -0r gzip -k -6
-
   artifacts:
     paths:
       - public
-
   rules:
-    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       needs: ['build']
       changes:
         paths:
-          - "{.gitlab-ci,package,app*,nuxt.config,tsconfig,yarn}.{yml,json,ts,vue,lock}"
-          - "{components,assets,content,layouts,pages,plugins,public}/**/*"
+          - '{.gitlab-ci,package,app*,nuxt.config,tsconfig,yarn}.{yml,json,ts,vue,lock}'
+          - '{components,assets,content,layouts,pages,plugins,public}/**/*'

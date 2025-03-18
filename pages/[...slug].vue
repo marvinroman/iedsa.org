@@ -1,9 +1,11 @@
 <template>
-  <v-container>
-    <ContentDoc>
-      <template #not-found>
-        <NotFound />
-      </template>
-    </ContentDoc>
-  </v-container>
+  <NuxtLayout>
+    <v-container>
+      <ContentDoc>
+        <template #not-found>
+          <NotFound />
+        </template>
+      </ContentDoc>
+    </v-container>
+  </NuxtLayout>
 </template>

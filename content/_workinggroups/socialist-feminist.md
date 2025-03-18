@@ -1,7 +1,7 @@
 ---
 title: Socialist Feminists
 icon: mdi-face-woman-shimmer-outline
-color: indigo
+icon_color: indigo
 ---
 
 The IEDSA Socialist Feminist working group consists of people of varying identities coming together for the downfall of patriarchy, which systematically oppresses people of all kinds and is instrumental in upholding capitalism by dividing the working class.

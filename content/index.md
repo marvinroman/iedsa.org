@@ -43,18 +43,6 @@ Members of Inland Empire DSA (IE DSA) strive for collective liberation and econo
 
 :working-groups
 
-::vuetify-container
-::vuetify-card{prependIcon=mdi-account-school-outline}
-UC Riverside's Young Democratic Socialists of America chapter. Student led, organized, and empowered.
-
-Email: ucr.ydsa@gmail.com  
-Instagram: [https://www.instagram.com/ydsaucr](https://www.instagram.com/ydsaucr)  
-Linktree: [https://linktr.ee/ydsaucr](https://linktr.ee/ydsaucr)  
-
-#title
-YDSA at UCR
-::
-
 :spacer
 
 :contact-form{url="https://formspree.io/f/xknvjjye"}
