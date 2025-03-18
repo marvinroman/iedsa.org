@@ -1,20 +1,22 @@
 <template>
-  <v-container>
-    <v-row>
-      <ContentList :query="query">
-        <template #default="{ list }">
-          <StatementList
-            v-for="statement in list"
-            :key="statement.id"
-            :statement="statement"
-          />
-        </template>
-        <template #not-found>
-          <p>No articles found.</p>
-        </template>
-      </ContentList>
-    </v-row>
-  </v-container>
+  <NuxtLayout>
+    <v-container>
+      <v-row>
+        <ContentList :query="query">
+          <template #default="{ list }">
+            <StatementList
+              v-for="statement in list"
+              :key="statement.id"
+              :statement="statement"
+            />
+          </template>
+          <template #not-found>
+            <p>No articles found.</p>
+          </template>
+        </ContentList>
+      </v-row>
+    </v-container>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
