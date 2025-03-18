@@ -1,58 +1,67 @@
 <template>
-  <ContentDoc>
-    <template #default="{ doc }">
-      <v-container class="mt-0 pt-0 mx-auto">
-        <v-container class="v-window__container mt-2">
-          <div class="v-window__controls">
-            <NuxtLink
-              v-if="prev"
-              :to="prev._path"
-              class="prev-btn v-btn v-btn--flat v-btn--icon v-theme--light v-btn--density-default v-btn--size-x-larg v-btn--variant-elevated mx-4 gradient-border"
-            >
-              <v-tooltip activator="parent" location="end">
-                {{ prev.title }}
-              </v-tooltip>
-              <v-icon size="x-large">mdi-chevron-left</v-icon>
-            </NuxtLink>
-            <div v-else></div>
-            <NuxtLink
-              v-if="next"
-              :to="next._path"
-              class="next-btn v-btn v-btn--flat v-btn--icon v-theme--light v-btn--density-default v-btn--size-x-larg v-btn--variant-elevated mx-4 gradient-border"
-            >
-              <v-tooltip activator="parent" location="start">
-                {{ next.title }}
-              </v-tooltip>
-              <v-icon size="x-large">mdi-chevron-right</v-icon>
-            </NuxtLink>
-            <div v-else></div>
-          </div>
-        </v-container>
-        <v-sheet>
-          <h1 class="mt-4">{{ doc.title }}</h1>
-
-          <div class="tags-container my-4">
-            <v-chip v-for="tag in doc.tags" :key="tag.id" outlined class="mr-2">
-              <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
-                <v-icon class="ml-2" color="secondary" small> mdi-tag </v-icon>
-                {{ tag }}
+  <NuxtLayout>
+    <ContentDoc>
+      <template #default="{ doc }">
+        <v-container class="mt-0 pt-0 mx-auto">
+          <v-container class="v-window__container mt-2">
+            <div class="v-window__controls">
+              <NuxtLink
+                v-if="prev"
+                :to="prev._path"
+                class="prev-btn v-btn v-btn--flat v-btn--icon v-theme--light v-btn--density-default v-btn--size-x-larg v-btn--variant-elevated mx-4 gradient-border"
+              >
+                <v-tooltip activator="parent" location="end">
+                  {{ prev.title }}
+                </v-tooltip>
+                <v-icon size="x-large">mdi-chevron-left</v-icon>
               </NuxtLink>
-            </v-chip>
-          </div>
+              <div v-else></div>
+              <NuxtLink
+                v-if="next"
+                :to="next._path"
+                class="next-btn v-btn v-btn--flat v-btn--icon v-theme--light v-btn--density-default v-btn--size-x-larg v-btn--variant-elevated mx-4 gradient-border"
+              >
+                <v-tooltip activator="parent" location="start">
+                  {{ next.title }}
+                </v-tooltip>
+                <v-icon size="x-large">mdi-chevron-right</v-icon>
+              </NuxtLink>
+              <div v-else></div>
+            </div>
+          </v-container>
+          <v-sheet>
+            <h1 class="mt-4">{{ doc.title }}</h1>
 
-          <div class="px-xs-5 my-1">
-            Date: {{ date.format(doc.date, 'fullDateWithWeekday') }}
-          </div>
-        </v-sheet>
-        <v-sheet class="pa-8 bg-grey-lighten-5 post-body">
-          <ContentRenderer :value="doc" />
-        </v-sheet>
-      </v-container>
-    </template>
-    <template #not-found>
-      <NotFound path="/statements" button-label="Return to Statements" />
-    </template>
-  </ContentDoc>
+            <div class="tags-container my-4">
+              <v-chip
+                v-for="tag in doc.tags"
+                :key="tag.id"
+                outlined
+                class="mr-2"
+              >
+                <NuxtLink :to="'/tag/' + tag" class="text-decoration-none">
+                  <v-icon class="ml-2" color="secondary" small>
+                    mdi-tag
+                  </v-icon>
+                  {{ tag }}
+                </NuxtLink>
+              </v-chip>
+            </div>
+
+            <div class="px-xs-5 my-1">
+              Date: {{ date.format(doc.date, 'fullDateWithWeekday') }}
+            </div>
+          </v-sheet>
+          <v-sheet class="pa-8 bg-grey-lighten-5 post-body">
+            <ContentRenderer :value="doc" />
+          </v-sheet>
+        </v-container>
+      </template>
+      <template #not-found>
+        <NotFound path="/statements" button-label="Return to Statements" />
+      </template>
+    </ContentDoc>
+  </NuxtLayout>
 </template>
 
 <script setup>
