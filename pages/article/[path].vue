@@ -2,7 +2,11 @@
   <NuxtLayout>
     <ContentDoc>
       <template #default="{ doc }">
-        <v-container>
+        <v-container
+          :fluid="false"
+          class="mt-0 pt-0 mx-auto"
+          style="max-width: 1280px"
+        >
           <v-container class="v-window__container mt-0 pt-0">
             <v-img v-if="doc.image" :src="doc.image" height="600"></v-img>
             <div class="v-window__controls">
@@ -64,7 +68,7 @@
           </v-sheet>
 
           <v-row no-gutters>
-            <v-col cols="12" md="9">
+            <v-col cols="12" :md="doc?.body?.toc?.links?.length > 0 ? 9 : 12">
               <v-sheet class="post-body">
                 <ContentRenderer
                   :value="doc"

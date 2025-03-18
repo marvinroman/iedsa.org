@@ -2,7 +2,11 @@
   <NuxtLayout>
     <ContentDoc>
       <template #default="{ doc }">
-        <v-container class="mt-0 pt-0 mx-auto">
+        <v-container
+          :fluid="false"
+          class="mt-0 pt-0 mx-auto"
+          style="max-width: 1280px"
+        >
           <v-container class="v-window__container mt-2">
             <div class="v-window__controls">
               <NuxtLink

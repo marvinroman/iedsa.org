@@ -13,9 +13,18 @@ export default defineNuxtPlugin((nuxtApp) => {
     theme: {
       defaultTheme: 'light',
       variations: {
-        colors: ['primary', 'secondary'],
-        lighten: 4,
-        darken: 4,
+        colors: [
+          'primary',
+          'secondary',
+          'accent',
+          'error',
+          'info',
+          'success',
+          'warning',
+          'anchor',
+        ],
+        lighten: 5,
+        darken: 5,
       },
       themes: {
         light: {

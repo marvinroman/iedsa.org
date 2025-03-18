@@ -1,6 +1,6 @@
 {
   "name": "nuxt3-with-vuetify3-example-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Nuxt3 with vuetify3 example template.",
   "private": true,
   "engines": {
