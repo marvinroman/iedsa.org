@@ -1,6 +1,7 @@
 image: node:18-alpine
 
 stages:
+  - test
   - build
   - release
   - deploy
@@ -12,6 +13,20 @@ cache:
     paths:
       - node_modules/
     policy: pull-push
+
+test:
+  stage: test
+  before_script:
+    - |
+      if [ ! -d "node_modules" ]; then
+        echo "Cache restoration failed. Recreating cache..."
+        rm -rf node_modules/
+        yarn install
+      fi
+  script:
+    - yarn lint
+    - yarn lint:style
+    - yarn build
 
 build:
   stage: build
