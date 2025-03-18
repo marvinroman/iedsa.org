@@ -1,6 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: true,
+
   // nitro: {
   //   preset: 'service-worker',
   // },
@@ -73,4 +74,6 @@ export default defineNuxtConfig({
       minimize: true,
     },
   },
+
+  compatibilityDate: '2025-03-18',
 })
